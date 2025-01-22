@@ -48,11 +48,16 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .mySwiper{
+    height: 275px;
+  }
+}
 
 
 .cta-button {
   padding: 10px 20px;
-  background-color: #00aaff;
+  background-color: #0B95CE;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -62,7 +67,7 @@ body {
 }
 
 .cta-button:hover {
-  background-color: #008ecc;
+  background-color: #0B95CE;
 }
 
 /* Прогресс-кружок */
@@ -76,6 +81,7 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 100;
+  display: none;
 }
 
 .autoplay-progress svg {
@@ -86,7 +92,7 @@ body {
 
 .autoplay-progress circle {
   fill: none;
-  stroke: #00aaff;
+  stroke: #0B95CE;
   stroke-width: 4;
   stroke-dasharray: 5; /* Даври пурра (2πr) */
   stroke-dashoffset: calc(126 * var(--progress, 1));
@@ -97,5 +103,5 @@ body {
   position: absolute;
   font-size: 12px;
   font-weight: bold;
-  color: #00aaff;
+  color: #0B95CE;
 }

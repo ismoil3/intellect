@@ -52,7 +52,7 @@ export default function HeroSection() {
               alt="Development Banner"
               className="w-full h-full object-cover object-center"
             />
-            <div className="absolute top-[60px] left-[24px] lg:left-[60px] text-start text-white dark:text-gray-200">
+            <div className="absolute top-[60px] left-[24px] lg:left-[60px] text-start max-w-[600px] text-white dark:text-gray-200">
               <h1 className="text-[28px] sm:text-[32px] md:text-[36px] lg:text-[48px] font-bold font-main">
                 Ҳуқуқшинос шавед
               </h1>
@@ -63,7 +63,7 @@ export default function HeroSection() {
                 <Button
                   variant="contained"
                   sx={{
-                    backgroundColor: darkMode ? "#1a73e8" : "#0098f3",
+                    backgroundColor: darkMode ? "#0B95CE" : "#0B95CE",
                     color: "#ffffff",
                     padding: "12px 24px",
                     mt: "16px",
@@ -72,7 +72,7 @@ export default function HeroSection() {
                     fontWeight: "bold",
                     boxShadow: "none",
                     "&:hover": {
-                      backgroundColor: darkMode ? "#1557b5" : "#007acc",
+                      backgroundColor: darkMode ? "#0B95CE" : "#0B95CE",
                       boxShadow: "none",
                     },
                   }}
@@ -89,7 +89,7 @@ export default function HeroSection() {
               alt="Development Banner"
               className="w-full h-full object-cover object-center"
             />
-            <div className="absolute top-[60px] left-[24px] lg:left-[60px] text-start text-white dark:text-gray-200">
+            <div className="absolute top-[60px] left-[24px] lg:left-[60px] text-start max-w-[600px] text-white dark:text-gray-200">
               <h1 className="text-[28px] sm:text-[32px] md:text-[36px] lg:text-[48px] font-bold font-main">
                 Касби духтуриро интихоб кунед
               </h1>
@@ -100,7 +100,7 @@ export default function HeroSection() {
                 <Button
                   variant="contained"
                   sx={{
-                    backgroundColor: darkMode ? "#1a73e8" : "#0098f3",
+                    backgroundColor: darkMode ? "#0B95CE" : "#0B95CE",
                     color: "#ffffff",
                     padding: "12px 24px",
                     mt: "16px",
@@ -109,7 +109,7 @@ export default function HeroSection() {
                     fontWeight: "bold",
                     boxShadow: "none",
                     "&:hover": {
-                      backgroundColor: darkMode ? "#1557b5" : "#007acc",
+                      backgroundColor: darkMode ? "#0B95CE" : "#0B95CE",
                       boxShadow: "none",
                     },
                   }}
