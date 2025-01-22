@@ -308,10 +308,27 @@ const Reviews = () => {
                   "&:hover": {
                     backgroundColor: "rgba(0, 0, 0, 0.7)",
                   },
+                  zIndex: "9999",
                 }}
               >
                 <CloseIcon />
               </IconButton>
+              <div
+                onClick={() =>
+                  setCurrentIndex((prevIndex) =>
+                    prevIndex < data.length - 1 ? prevIndex + 1 : 0
+                  )
+                }
+                className="h-[100%] w-[25%] bg-transparent absolute right-0"
+              ></div>
+              <div
+                onClick={() =>
+                  setCurrentIndex((prevIndex) =>
+                    prevIndex > 0 ? prevIndex - 1 : data.length - 1
+                  )
+                }
+                className="h-[100%] w-[25%] bg-transparent absolute left-0"
+              ></div>
             </>
           )}
         </DialogContent>
