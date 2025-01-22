@@ -142,7 +142,7 @@ const Reviews = () => {
       <Dialog
         open={!!selectedImage} // Open modal if selectedImage is not null
         onClose={handleClose} // Close modal on outside click or ESC
-        maxWidth="sm" // Set max width for the modal
+        maxWidth="xs" // Set max width for the modal
         fullWidth // Make the modal full width
       >
         <DialogContent
