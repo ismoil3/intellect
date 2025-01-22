@@ -7,7 +7,8 @@ import Container from "../shared/container/container";
 import Image from "next/image";
 import { useSettingStore } from "@/app/store/setting/useSettingStore";
 import { useState } from "react";
-import { Dialog, DialogContent } from "@mui/material";
+import { Dialog, DialogContent, IconButton } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close"; // Import close icon
 
 const Reviews = () => {
     const data = [
@@ -150,16 +151,36 @@ const Reviews = () => {
             justifyContent: "center",
             alignItems: "center",
             padding: 0,
+            position: "relative", // For positioning the close button
           }}
         >
           {selectedImage && (
-            <Image
-              src={selectedImage}
-              alt="Full Screen Image"
-              width={800}
-              height={800}
-              style={{ width: "100%", height: "auto", maxHeight: "90vh" }}
-            />
+            <>
+              <Image
+                src={selectedImage}
+                alt="Full Screen Image"
+                width={800}
+                height={800}
+                style={{ width: "100%", height: "auto", maxHeight: "90vh" }}
+              />
+              {/* Close Button */}
+              <IconButton
+                aria-label="close"
+                onClick={handleClose}
+                sx={{
+                  position: "absolute",
+                  top: 10,
+                  right: 10,
+                  color: "white",
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                  "&:hover": {
+                    backgroundColor: "rgba(0, 0, 0, 0.7)",
+                  },
+                }}
+              >
+                <CloseIcon />
+              </IconButton>
+            </>
           )}
         </DialogContent>
       </Dialog>
