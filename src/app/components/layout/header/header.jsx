@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react"; // Import useEffect
 import logo from "../../../../images/logo.jpg";
 import Container from "../../shared/container/container";
 import {
@@ -25,6 +25,8 @@ import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import { useRouter } from "next/navigation";
 import { useSettingStore } from "@/app/store/setting/useSettingStore";
 import ThemeSwitcher from "../../providers/ThemeSwitcher";
+import AOS from "aos"; // Import AOS
+import "aos/dist/aos.css"; // Import AOS styles
 
 const Header = () => {
   const { darkMode } = useSettingStore();
@@ -39,9 +41,17 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const toggleDrawer = (newOpen) => () => setOpen(newOpen);
 
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+      once: true, // Whether animation should happen only once
+    });
+  }, []);
+
   return (
     <>
-      <div className={`backdrop-blur-lg sticky top-0 z-50 `}>
+      <div className={`backdrop-blur-lg sticky top-0 z-50`}>
         <Container>
           <div className="flex items-center justify-between py-4">
             <div>
@@ -52,12 +62,15 @@ const Header = () => {
                   alt="educrat"
                   width={50}
                   height={50}
+                  data-aos="fade-down" // Add AOS animation
                 />
                 <Box sx={{ display: { xs: "none", sm: "block" } }}>
                   <p
                     className={`logo text-2xl font-bold ${
                       isDarkMode ? "text-white" : "text-black"
                     }`}
+                    data-aos="fade-down" // Add AOS animation
+                    data-aos-delay="100" // Add delay
                   >
                     Intellect
                   </p>
@@ -72,16 +85,32 @@ const Header = () => {
                   isDarkMode ? "text-white" : "text-black"
                 } flex gap-6 font-medium`}
               >
-                <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
+                <li
+                  className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300"
+                  data-aos="fade-down" // Add AOS animation
+                  data-aos-delay="200" // Add delay
+                >
                   Home
                 </li>
-                <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
+                <li
+                  className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300"
+                  data-aos="fade-down" // Add AOS animation
+                  data-aos-delay="300" // Add delay
+                >
                   курсы
                 </li>
-                <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
+                <li
+                  className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300"
+                  data-aos="fade-down" // Add AOS animation
+                  data-aos-delay="400" // Add delay
+                >
                   Новости
                 </li>
-                <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
+                <li
+                  className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300"
+                  data-aos="fade-down" // Add AOS animation
+                  data-aos-delay="500" // Add delay
+                >
                   О нас
                 </li>
               </ul>
@@ -96,10 +125,16 @@ const Header = () => {
               }}
               className="flex gap-6 items-center"
             >
-              <FormControlLabel control={<ThemeSwitcher />} />
+              <FormControlLabel
+                control={<ThemeSwitcher />}
+                data-aos="fade-down" // Add AOS animation
+                data-aos-delay="600" // Add delay
+              />
               <FormControl
                 sx={{ m: 1, minWidth: 50, display: { xs: "none", lg: "flex" } }}
                 size="small"
+                data-aos="fade-down" // Add AOS animation
+                data-aos-delay="700" // Add delay
               >
                 <Select
                   labelId="demo-select-small-label"
@@ -116,13 +151,13 @@ const Header = () => {
                     },
                     outline: "none",
                     "& .MuiOutlinedInput-notchedOutline": {
-                      border: "none", // Remove the notched outline for outlined Select
+                      border: "none",
                     },
                     "&:hover": {
-                      border: "none", // Remove the border on hover
+                      border: "none",
                     },
                     "&:focus": {
-                      outline: "none", // Remove outline when focused
+                      outline: "none",
                     },
                   }}
                 >
@@ -147,6 +182,8 @@ const Header = () => {
                     transform: "scale(1.05)",
                   },
                 }}
+                data-aos="fade-down" // Add AOS animation
+                data-aos-delay="800" // Add delay
               >
                 Log in
               </Button>
@@ -155,137 +192,138 @@ const Header = () => {
         </Container>
 
         {/* Mobile Bottom Navigation */}
-
-        {/* Language Drawer */}
-        <Drawer
-          anchor="bottom"
+        <Box
           sx={{
-            height: "60vh",
-            "& .MuiDrawer-paper": {
-              borderTopLeftRadius: "20px",
-              borderTopRightRadius: "20px",
+            position: "fixed",
+            bottom: "0",
+            width: "100%",
+            display: { xs: "block", lg: "none" },
+            zIndex: "1000",
+            backgroundColor: isDarkMode ? "#1e1e2f" : "#ffffff",
+            boxShadow: "0px -2px 10px rgba(0, 0, 0, 0.1)",
+          }}
+          data-aos="fade-up" // Add AOS animation
+        >
+          <BottomNavigation
+            value={value}
+            onChange={handleChangeNavigation}
+            sx={{
               backgroundColor: isDarkMode ? "#1e1e2f" : "#ffffff",
               color: isDarkMode ? "#ffffff" : "#000000",
-            },
-          }}
-          open={open}
-          onClose={toggleDrawer(false)}
-        >
-          <Box
-            sx={{
-              p: "20px",
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
             }}
           >
-            <Typography
-              variant="h6"
-              sx={{
-                fontWeight: "bold",
-                color: isDarkMode ? "#ffffff" : "#000000",
-                marginBottom: "20px",
-              }}
-            >
-              Choose Language
-            </Typography>
-            <List sx={{ width: "100%" }}>
-              {[
-                { value: "en", label: "English", flag: "🇺🇸" },
-                { value: "ru", label: "Русский", flag: "🇷🇺" },
-                { value: "tj", label: "Тоҷикӣ", flag: "🇹🇯" },
-              ].map((item) => (
-                <ListItem
-                  key={item.value}
-                  onClick={() => {
-                    setOpen(false), setAge(item.value);
-                  }}
-                  sx={{
-                    cursor: "pointer",
-                    padding: "15px",
-                    textAlign: "center",
-                    borderRadius: "10px",
-                    transition: "all 0.3s ease",
-                    backgroundColor: age === item.value ? "#6440fb" : "#2104",
-                    color:
-                      age === item.value
-                        ? "#ffffff"
-                        : isDarkMode
-                        ? "#ffffff"
-                        : "#000000",
-                    "&:hover": {
-                      backgroundColor: "#6440fb",
-                      color: "#ffffff",
-                      transform: "scale(1.01)",
-                    },
-                    mb: "20px",
-                  }}
-                >
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "10px",
-                      fontWeight: age === item.value ? "bold" : "normal",
-                    }}
-                  >
-                    <span>{item.flag}</span> {item.label}
-                  </Typography>
-                </ListItem>
-              ))}
-            </List>
-          </Box>
-        </Drawer>
+            <BottomNavigationAction
+              label="Home"
+              value="Home"
+              icon={<HouseOutlinedIcon />}
+              sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
+            />
+            <BottomNavigationAction
+              label="Courses"
+              value="courses"
+              icon={<WidgetsOutlinedIcon />}
+              sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
+            />
+            <BottomNavigationAction
+              label="Blog"
+              value="Blog"
+              icon={<LibraryBooksOutlinedIcon />}
+              sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
+            />
+            <BottomNavigationAction
+              label="Language"
+              value="language"
+              icon={<LanguageOutlinedIcon />}
+              onClick={toggleDrawer(true)}
+              sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
+            />
+          </BottomNavigation>
+        </Box>
       </div>
-      <Box
+
+      {/* Language Drawer */}
+      <Drawer
+        anchor="bottom"
         sx={{
-          position: "fixed",
-          bottom: "0",
-          width: "100%",
-          display: { xs: "block", lg: "none" },
-          zIndex: "1000",
-          backgroundColor: isDarkMode ? "#1e1e2f" : "#ffffff",
-          boxShadow: "0px -2px 10px rgba(0, 0, 0, 0.1)",
-        }}
-      >
-        <BottomNavigation
-          value={value}
-          onChange={handleChangeNavigation}
-          sx={{
+          height: "60vh",
+          "& .MuiDrawer-paper": {
+            borderTopLeftRadius: "20px",
+            borderTopRightRadius: "20px",
             backgroundColor: isDarkMode ? "#1e1e2f" : "#ffffff",
             color: isDarkMode ? "#ffffff" : "#000000",
+          },
+        }}
+        open={open}
+        onClose={toggleDrawer(false)}
+      >
+        <Box
+          sx={{
+            p: "20px",
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          <BottomNavigationAction
-            label="Home"
-            value="Home"
-            icon={<HouseOutlinedIcon />}
-            sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
-          />
-          <BottomNavigationAction
-            label="Courses"
-            value="courses"
-            icon={<WidgetsOutlinedIcon />}
-            sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
-          />
-          <BottomNavigationAction
-            label="Blog"
-            value="Blog"
-            icon={<LibraryBooksOutlinedIcon />}
-            sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
-          />
-          <BottomNavigationAction
-            label="Language"
-            value="language"
-            icon={<LanguageOutlinedIcon />}
-            onClick={toggleDrawer(true)}
-            sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
-          />
-        </BottomNavigation>
-      </Box>
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: "bold",
+              color: isDarkMode ? "#ffffff" : "#000000",
+              marginBottom: "20px",
+            }}
+          >
+            Choose Language
+          </Typography>
+          <List sx={{ width: "100%" }}>
+            {[
+              { value: "en", label: "English", flag: "🇺🇸" },
+              { value: "ru", label: "Русский", flag: "🇷🇺" },
+              { value: "tj", label: "Тоҷикӣ", flag: "🇹🇯" },
+            ].map((item) => (
+              <ListItem
+                key={item.value}
+                onClick={() => {
+                  setOpen(false), setAge(item.value);
+                }}
+                sx={{
+                  cursor: "pointer",
+                  padding: "15px",
+                  textAlign: "center",
+                  borderRadius: "10px",
+                  transition: "all 0.3s ease",
+                  backgroundColor: age === item.value ? "#6440fb" : "#2104",
+                  color:
+                    age === item.value
+                      ? "#ffffff"
+                      : isDarkMode
+                      ? "#ffffff"
+                      : "#000000",
+                  "&:hover": {
+                    backgroundColor: "#6440fb",
+                    color: "#ffffff",
+                    transform: "scale(1.01)",
+                  },
+                  mb: "20px",
+                }}
+              >
+                <Typography
+                  variant="body1"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    fontWeight: age === item.value ? "bold" : "normal",
+                  }}
+                >
+                  <span>{item.flag}</span> {item.label}
+                </Typography>
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Drawer>
     </>
   );
 };

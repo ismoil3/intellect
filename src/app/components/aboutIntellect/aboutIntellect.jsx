@@ -1,4 +1,7 @@
-"use client"
+"use client";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 import { Card } from "@mui/material";
 import Image from "next/image";
 import Container from "../shared/container/container";
@@ -6,6 +9,14 @@ import { useSettingStore } from "@/app/store/setting/useSettingStore";
 
 export default function AboutIntellect() {
   const { darkMode } = useSettingStore();
+
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+      once: true, // Whether animation should happen only once
+    });
+  }, []);
 
   return (
     <Container>
@@ -15,6 +26,7 @@ export default function AboutIntellect() {
           className={`grid rounded-[1.5rem] justify-between ${
             darkMode ? "bg-gray-800" : "bg-[#F4F6F7]"
           } md:grid-cols-2 gap-8 items-center mb-16`}
+          data-aos="fade-up" // Add AOS animation
         >
           <div className="p-[20px]">
             <h1
@@ -29,9 +41,9 @@ export default function AboutIntellect() {
                 darkMode ? "text-gray-300" : "text-gray-700"
               }`}
             >
-              это образовательный центр, предоставляющий услуги по подготовке к
-              экзаменам для 4 и 5 кластеров, олимпиадам по химии и биологии, а
-              также изучению анатомии, физиологии и биохимии. Центр также
+              это образовательный центр, предоставляющий услуги по подготовке
+              к экзаменам для 4 и 5 кластеров, олимпиадам по химии и биологии,
+              а также изучению анатомии, физиологии и биохимии. Центр также
               проводит курсы иностранных языков и направлен на развитие
               академического потенциала студентов.
             </p>
@@ -54,6 +66,7 @@ export default function AboutIntellect() {
               backgroundColor: darkMode ? "#1f2937 " : "#F4F6F7",
               borderRadius: "1.5rem",
             }}
+            data-aos="fade-right" // Add AOS animation
           >
             <div className="w-16 h-16 mb-4 rounded-3xl bg-gradient-to-br from-purple-400 via-blue-400 to-cyan-400 p-[2px]">
               <div className="w-full h-full rounded-2xl bg-white flex items-center justify-center">
@@ -72,8 +85,8 @@ export default function AboutIntellect() {
                 darkMode ? "text-gray-300" : "text-gray-600"
               }`}
             >
-              Этот образовательный центр имеет более чем 10-летний опыт работы и
-              за это время добился больших успехов.
+              Этот образовательный центр имеет более чем 10-летний опыт работы
+              и за это время добился больших успехов.
             </p>
           </Card>
 
@@ -84,6 +97,7 @@ export default function AboutIntellect() {
               backgroundColor: darkMode ? "#1f2937 " : "#F4F6F7",
               borderRadius: "1.5rem",
             }}
+            data-aos="fade-left" // Add AOS animation
           >
             <div className="w-16 h-16 mb-4 rounded-3xl bg-gradient-to-br from-purple-400 via-blue-400 to-cyan-400 p-[2px]">
               <div className="w-full h-full rounded-2xl bg-white flex items-center justify-center">

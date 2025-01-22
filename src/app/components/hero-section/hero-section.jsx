@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,10 +14,19 @@ import Link from "next/link";
 import { Button } from "@mui/material";
 import Container from "../shared/container/container";
 import { useSettingStore } from "@/app/store/setting/useSettingStore";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 export default function HeroSection() {
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Duration of animation
+      once: true, // Whether animation should happen only once - while scrolling down
+    });
+  }, []);
 
   const onAutoplayTimeLeft = (s, time, progress) => {
     const progressValue = 1 - progress; // Прогресси боқимонда
@@ -52,7 +61,10 @@ export default function HeroSection() {
               alt="Development Banner"
               className="w-full h-full object-cover object-center"
             />
-            <div className="absolute top-[60px] left-[24px] lg:left-[60px] text-start max-w-[600px] text-white dark:text-gray-200">
+            <div
+              className="absolute top-[60px] left-[24px] lg:left-[60px] text-start max-w-[600px] text-white dark:text-gray-200"
+              data-aos="fade-right"
+            >
               <h1 className="text-[28px] sm:text-[32px] md:text-[36px] lg:text-[48px] font-bold font-main">
                 Ҳуқуқшинос шавед
               </h1>
@@ -76,6 +88,7 @@ export default function HeroSection() {
                       boxShadow: "none",
                     },
                   }}
+                  data-aos="fade-up"
                 >
                   Номнавис шавед
                 </Button>
@@ -89,7 +102,10 @@ export default function HeroSection() {
               alt="Development Banner"
               className="w-full h-full object-cover object-center"
             />
-            <div className="absolute top-[60px] left-[24px] lg:left-[60px] text-start max-w-[600px] text-white dark:text-gray-200">
+            <div
+              className="absolute top-[60px] left-[24px] lg:left-[60px] text-start max-w-[600px] text-white dark:text-gray-200"
+              data-aos="fade-right"
+            >
               <h1 className="text-[28px] sm:text-[32px] md:text-[36px] lg:text-[48px] font-bold font-main">
                 Касби духтуриро интихоб кунед
               </h1>
@@ -113,6 +129,7 @@ export default function HeroSection() {
                       boxShadow: "none",
                     },
                   }}
+                  data-aos="fade-up"
                 >
                   Номнавис шавед
                 </Button>

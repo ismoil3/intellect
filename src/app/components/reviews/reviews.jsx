@@ -6,9 +6,11 @@ import { Pagination } from "swiper/modules";
 import Container from "../shared/container/container";
 import Image from "next/image";
 import { useSettingStore } from "@/app/store/setting/useSettingStore";
-import { useState, useEffect } from "react"; 
-import { Dialog, DialogContent, IconButton } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close"; 
+import { useState, useEffect } from "react";
+import { Dialog, DialogContent, IconButton, Skeleton } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import AOS from "aos"; // Import AOS
+import "aos/dist/aos.css"; // Import AOS styles
 
 const Reviews = () => {
   const data = [
@@ -55,39 +57,50 @@ const Reviews = () => {
   ];
 
   const { darkMode } = useSettingStore();
-  const [selectedImage, setSelectedImage] = useState(null); 
-  const [currentIndex, setCurrentIndex] = useState(0); 
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
-  
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+      once: true, // Whether animation should happen only once
+    });
+  }, []);
+
   const handleImageClick = (imageUrl, index) => {
     setSelectedImage(imageUrl);
-    setCurrentIndex(index); 
+    setCurrentIndex(index);
   };
 
-  
   const handleClose = () => {
     setSelectedImage(null);
   };
 
-  
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (selectedImage) {
         switch (event.key) {
           case "ArrowLeft":
-            
+          case "a":
+          case "A":
+          case "ф":
+          case "Ф":
             setCurrentIndex((prevIndex) =>
               prevIndex > 0 ? prevIndex - 1 : data.length - 1
             );
             break;
           case "ArrowRight":
-            
+          case "d":
+          case "D":
+          case "в":
+          case "В":
             setCurrentIndex((prevIndex) =>
               prevIndex < data.length - 1 ? prevIndex + 1 : 0
             );
             break;
           case "Escape":
-            
             handleClose();
             break;
           default:
@@ -96,21 +109,27 @@ const Reviews = () => {
       }
     };
 
-    
     window.addEventListener("keydown", handleKeyDown);
 
-    
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [selectedImage, currentIndex, data.length]);
 
-  
   useEffect(() => {
     if (selectedImage) {
       setSelectedImage(data[currentIndex].url);
     }
   }, [currentIndex, data, selectedImage]);
+
+  // Simulate image loading
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Simulate a 2-second loading delay
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <Container>
@@ -120,10 +139,15 @@ const Reviews = () => {
             className={`text-3xl font-bold ${
               darkMode ? "text-gray-100" : "text-gray-800"
             }`}
+            data-aos="fade-down" // Add AOS animation
           >
             Что говорят наши студенты о нас
           </h1>
-          <p className={`mt-4 ${darkMode ? "text-gray-400" : "text-gray-600"}`}>
+          <p
+            className={`mt-4 ${darkMode ? "text-gray-400" : "text-gray-600"}`}
+            data-aos="fade-down" // Add AOS animation
+            data-aos-delay="200" // Delay animation
+          >
             Реальные отзывы и впечатления от наших учеников
           </p>
           <div className="mt-10">
@@ -163,18 +187,69 @@ const Reviews = () => {
                           ? "bg-gray-700 text-gray-300 hover:bg-gray-600"
                           : "bg-white text-gray-800 hover:bg-gray-100"
                       }`}
-                      onClick={() => handleImageClick(el.url, index)} 
+                      onClick={() => handleImageClick(el.url, index)}
+                      data-aos="fade-up" // Add AOS animation
+                      data-aos-delay={index * 100} // Delay animation for each slide
                     >
-                      <Image
-                        src={el.url}
-                        width={200}
-                        height={200}
-                        alt={`Review ${el.id}`}
-                        className="rounded-lg cursor-pointer"
-                        onError={(e) => {
-                          e.currentTarget.src = "/image.png";
-                        }}
-                      />
+                      {isLoading ? (
+                        <>
+                          <Skeleton
+                            variant="rectangular"
+                            width={200}
+                            height={50}
+                            animation="wave"
+                            sx={{
+                              bgcolor: darkMode ? "grey.800" : "grey.300",
+                              borderRadius: "8px",
+                            }}
+                          />
+                          <br />
+                          <Skeleton
+                            variant="rectangular"
+                            width={200}
+                            height={50}
+                            animation="wave"
+                            sx={{
+                              bgcolor: darkMode ? "grey.800" : "grey.300",
+                              borderRadius: "8px",
+                            }}
+                          />
+                          <br />
+                          <Skeleton
+                            variant="rectangular"
+                            width={200}
+                            height={50}
+                            animation="wave"
+                            sx={{
+                              bgcolor: darkMode ? "grey.800" : "grey.300",
+                              borderRadius: "8px",
+                            }}
+                          />
+                          <br />
+                          <Skeleton
+                            variant="rectangular"
+                            width={200}
+                            height={50}
+                            animation="wave"
+                            sx={{
+                              bgcolor: darkMode ? "grey.800" : "grey.300",
+                              borderRadius: "8px",
+                            }}
+                          />
+                        </>
+                      ) : (
+                        <Image
+                          src={el.url}
+                          width={200}
+                          height={200}
+                          alt={`Review ${el.id}`}
+                          className="rounded-lg cursor-pointer"
+                          onError={(e) => {
+                            e.currentTarget.src = "/image.png";
+                          }}
+                          onLoad={() => setIsLoading(false)}
+                        />
+                      )}
                     </div>
                   </SwiperSlide>
                 ))}
@@ -185,10 +260,10 @@ const Reviews = () => {
 
       {/* Full-Screen Image Modal */}
       <Dialog
-        open={!!selectedImage} 
-        onClose={handleClose} 
-        maxWidth="xs" 
-        fullWidth 
+        open={!!selectedImage}
+        onClose={handleClose}
+        maxWidth="xs"
+        fullWidth
       >
         <DialogContent
           sx={{
@@ -196,19 +271,31 @@ const Reviews = () => {
             justifyContent: "center",
             alignItems: "center",
             padding: 0,
-            position: "relative", 
+            position: "relative",
           }}
         >
           {selectedImage && (
             <>
-              <Image
-                src={selectedImage}
-                alt="Full Screen Image"
-                width={800}
-                height={800}
-                style={{ width: "100%", height: "auto", maxHeight: "90vh" }}
-              />
-              {/* Close Button */}
+              {isLoading ? (
+                <Skeleton
+                  variant="rectangular"
+                  width={800}
+                  height={800}
+                  animation="wave"
+                  sx={{
+                    bgcolor: darkMode ? "grey.800" : "grey.300",
+                    borderRadius: "8px",
+                  }}
+                />
+              ) : (
+                <Image
+                  src={selectedImage}
+                  alt="Full Screen Image"
+                  width={800}
+                  height={800}
+                  style={{ width: "100%", height: "auto", maxHeight: "90vh" }}
+                />
+              )}
               <IconButton
                 aria-label="close"
                 onClick={handleClose}
