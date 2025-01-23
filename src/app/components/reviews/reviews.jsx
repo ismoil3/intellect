@@ -319,7 +319,7 @@ const Reviews = () => {
                     prevIndex < data.length - 1 ? prevIndex + 1 : 0
                   )
                 }
-                className="h-[100%] w-[25%] bg-transparent absolute right-0"
+                className="h-[100%]  cursor-pointer w-[25%] bg-transparent absolute right-0"
               ></div>
               <div
                 onClick={() =>
@@ -327,7 +327,7 @@ const Reviews = () => {
                     prevIndex > 0 ? prevIndex - 1 : data.length - 1
                   )
                 }
-                className="h-[100%] w-[25%] bg-transparent absolute left-0"
+                className="h-[100%] cursor-pointer  w-[25%] bg-transparent absolute left-0"
               ></div>
             </>
           )}
