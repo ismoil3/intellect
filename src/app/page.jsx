@@ -11,6 +11,7 @@ const page = () => {
       <AboutIntellect/>
       <Reviews/>
       <Courses/>
+      
     </div>
   )
 }

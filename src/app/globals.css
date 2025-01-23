@@ -5,13 +5,13 @@
 @tailwind utilities;
 
 :root {
-  --background-color: #ffffff;
+  --background-color: #F4F4F5;
   --text-color: #091220;
 }
 
 .dark {
   --background-color: #091220;
-  --text-color: #ffffff;
+  --text-color: #F4F4F5;
 }
 
 body {

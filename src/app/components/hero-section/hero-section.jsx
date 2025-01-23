@@ -50,7 +50,7 @@ export default function HeroSection() {
           pagination={{
             clickable: true,
           }}
-          modules={[Autoplay, Pagination]}
+          modules={[Autoplay]}
           onAutoplayTimeLeft={onAutoplayTimeLeft}
           className="mySwiper"
         >

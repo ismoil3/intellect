@@ -1,7 +1,13 @@
-import {create} from "zustand";
+import { create } from "zustand";
+
+
+const getInitialDarkMode = () => {
+  if (typeof window !== "undefined") {
+    return localStorage.getItem('theme') !== 'light';
+  }
+};
 
 export const useSettingStore = create((set) => ({
-  darkMode: localStorage.getItem('theme') == 'light' ? false : true,
-    setDarkMode: (theme) => set((state)=> ({darkMode: theme}))
-  
+  darkMode: getInitialDarkMode(),
+  setDarkMode: (theme) => set({ darkMode: theme }), 
 }));

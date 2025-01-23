@@ -154,13 +154,13 @@ const Reviews = () => {
             <Swiper
               slidesPerView={2}
               spaceBetween={10}
-              pagination={{
-                clickable: true,
-                dynamicBullets: true,
-                bulletClass: `swiper-pagination-bullet ${
-                  darkMode ? "dark-bullet" : "light-bullet"
-                }`,
-              }}
+            //   pagination={{
+            //     clickable: true,
+            //     dynamicBullets: true,
+            //     bulletClass: `swiper-pagination-bullet ${
+            //       darkMode ? "dark-bullet" : "light-bullet"
+            //     }`,
+            //   }}
               breakpoints={{
                 640: {
                   slidesPerView: 2,
