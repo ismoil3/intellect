@@ -173,7 +173,7 @@ export default function Courses() {
           onChange={(event, newValue) => setActiveTab(newValue)}
           variant="scrollable"
           scrollButtons="auto"
-          sx={{ mb: 4 }}
+          sx={{ mb: 4 ,"& .MuiTabs-scrollButtons":{display:"none"}}}
         >
           {TABS.map((tab) => (
             <CustomTab

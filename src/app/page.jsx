@@ -17,7 +17,6 @@ const page = () => {
       <TeachersSlider/>
       <News/>
       <ContactForm/>
-    <br /><br /><br />
     </div>
   );
 };

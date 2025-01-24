@@ -66,7 +66,7 @@ const Header = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <Box sx={{ display: { xs: "none", lg: "block" }, color: "white" }}>
+            <Box sx={{ display: { xs: "none", md: "block" }, color: "white" }}>
               <ul
                 className={`${
                   isDarkMode ? "text-white" : "text-black"
@@ -98,7 +98,7 @@ const Header = () => {
             >
               <FormControlLabel control={<ThemeSwitcher />} />
               <FormControl
-                sx={{ m: 1, minWidth: 50, display: { xs: "none", lg: "flex" } }}
+                sx={{ m: 1, minWidth: 50, display: { xs: "none", md: "flex" } }}
                 size="small"
               >
                 <Select
@@ -245,7 +245,7 @@ const Header = () => {
           position: "fixed",
           bottom: "0",
           width: "100%",
-          display: { xs: "block", lg: "none" },
+          display: { xs: "block", md: "none" },
           zIndex: "1000",
           backgroundColor: isDarkMode ? "#1e1e2f" : "#ffffff",
           boxShadow: "0px -2px 10px rgba(0, 0, 0, 0.1)",
