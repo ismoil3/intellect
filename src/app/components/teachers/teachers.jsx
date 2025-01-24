@@ -85,8 +85,10 @@ export default function TeachersSlider() {
           disableOnInteraction: false,
         }}
         breakpoints={{
-          640: {
+        
+          400: {
             slidesPerView: 2,
+            
           },
           1024: {
             slidesPerView: 3,

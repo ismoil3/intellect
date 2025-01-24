@@ -159,9 +159,13 @@ export default function Courses() {
 
   return (
     <Container>
-      <Typography variant="h3" sx={{ mb: 4, textAlign: "center" }}>
-        Курсҳо
-      </Typography>
+      <h1
+        className={`text-3xl text-center font-bold ${
+          darkMode ? "text-gray-100" : "text-gray-800"
+        }`}
+      >
+        курсы
+      </h1>{" "}<br/><br />
       {/* Tabs */}
       <div className="flex justify-center ">
         <CustomTabs

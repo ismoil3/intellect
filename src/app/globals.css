@@ -108,3 +108,11 @@ body {
 
 
 
+@keyframes float {
+  0% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(-25%) translateY(-25%); }
+  100% { transform: translateX(0) translateY(0); }
+}
+.animate-float {
+  animation: float 10s infinite linear;
+}

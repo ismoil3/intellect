@@ -4,6 +4,8 @@ import HeroSection from "./components/hero-section/hero-section";
 import Reviews from "./components/reviews/reviews";
 import Courses from "./components/courses/courses";
 import TeachersSlider from "./components/teachers/teachers";
+import News from "./components/news/news";
+import ContactForm from "./components/contact/contact";
 
 const page = () => {
   return (
@@ -13,6 +15,8 @@ const page = () => {
       <Reviews />
       <Courses />
       <TeachersSlider/>
+      <News/>
+      <ContactForm/>
     <br /><br /><br />
     </div>
   );
