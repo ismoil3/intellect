@@ -53,6 +53,7 @@ export default function AboutIntellect() {
               src="/INTELLECT.jpg"
               alt="intellect Academy graduates"
               fill
+              className=" "
             />
           </div>
         </div>
