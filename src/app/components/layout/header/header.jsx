@@ -277,26 +277,26 @@ const Header = () => {
     />
     <BottomNavigationAction
       label="Courses"
-      value="#courses"
+      value="courses"
       icon={<WidgetsOutlinedIcon />}
       component={Link}
-      href="#courses"
+      href="/#courses"
       sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
     />
     <BottomNavigationAction
       label="News"
-      value="#news"
+      value="news"
       icon={<FeedOutlinedIcon />}
       component={Link}
-      href="#news"
+      href="/#news"
       sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
     />
     <BottomNavigationAction
       label="Blog"
-      value="/blog"
+      value="/pages/blog"
       icon={<LibraryBooksOutlinedIcon />}
       component={Link}
-      href="/blog"
+      href="/pages/blog"
       sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
     />
     <BottomNavigationAction
