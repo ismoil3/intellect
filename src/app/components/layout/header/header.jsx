@@ -247,7 +247,8 @@ const Header = () => {
           </Box>
         </Drawer>
       </div>
-      <Box
+     
+<Box
   sx={{
     position: "fixed",
     bottom: "0",
@@ -270,28 +271,32 @@ const Header = () => {
       label="Home"
       value="/"
       icon={<HouseOutlinedIcon />}
-      onClick={() => router.push("/")}
+      component={Link}
+      href="/"
       sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
     />
     <BottomNavigationAction
       label="Courses"
       value="#courses"
       icon={<WidgetsOutlinedIcon />}
-      onClick={() => router.push("#courses")}
+      component={Link}
+      href="#courses"
       sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
     />
     <BottomNavigationAction
       label="News"
       value="#news"
       icon={<FeedOutlinedIcon />}
-      onClick={() => router.push("#news")}
+      component={Link}
+      href="#news"
       sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
     />
     <BottomNavigationAction
       label="Blog"
       value="/blog"
       icon={<LibraryBooksOutlinedIcon />}
-      onClick={() => router.push("/blog")}
+      component={Link}
+      href="/blog"
       sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
     />
     <BottomNavigationAction
@@ -303,7 +308,6 @@ const Header = () => {
     />
   </BottomNavigation>
 </Box>
-
     </>
   );
 };
