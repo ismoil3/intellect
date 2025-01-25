@@ -54,8 +54,7 @@ export default function HeroSection() {
           onAutoplayTimeLeft={onAutoplayTimeLeft}
           className="mySwiper"
         >
-
-<SwiperSlide>
+          <SwiperSlide>
             <img
               src="https://online.omuz.tj/static/media/Medicine.fde59c6182ce11503721.png"
               alt="Development Banner"
@@ -95,7 +94,7 @@ export default function HeroSection() {
               </Link>
             </div>
           </SwiperSlide>
-          
+
           {/* Слайдҳо */}
           <SwiperSlide>
             <img
@@ -137,8 +136,6 @@ export default function HeroSection() {
               </Link>
             </div>
           </SwiperSlide>
-
-       
 
           {/* Прогресс-кружок */}
           <div className="autoplay-progress" slot="container-end">

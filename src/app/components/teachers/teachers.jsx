@@ -58,6 +58,7 @@ const TEACHERS = [
 export default function TeachersSlider() {
   const [mounted, setMounted] = useState(false);
   const { darkMode } = useSettingStore();
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -74,7 +75,9 @@ export default function TeachersSlider() {
         }`}
       >
         Наши преподаватели
-      </h1>{" "}<br/><br />
+      </h1>
+      <br />
+      <br />
       <Swiper
         modules={[Pagination, Autoplay]}
         spaceBetween={24}
@@ -85,13 +88,18 @@ export default function TeachersSlider() {
           disableOnInteraction: false,
         }}
         breakpoints={{
-        
-          400: {
-            slidesPerView: 2,
-            
+          // Ensure all breakpoints are well defined
+          320: {
+            slidesPerView: 1, // Mobile devices
+            spaceBetween: 16,
+          },
+          768: {
+            slidesPerView: 2, // Tablets
+            spaceBetween: 20,
           },
           1024: {
-            slidesPerView: 3,
+            slidesPerView: 3, // Desktop
+            spaceBetween: 24,
           },
         }}
         className="!pb-12"
@@ -99,7 +107,7 @@ export default function TeachersSlider() {
         {TEACHERS.map((teacher) => (
           <SwiperSlide key={teacher.id}>
             <div
-              className={` max-w-[400px] ${
+              className={`max-w-[400px] ${
                 darkMode ? "bg-[#161F2D]" : "bg-white"
               } overflow-hidden flex flex-col justify-between items-start font-main h-[250px] sm:h-[250px] sm:max-h-[250px] p-6 rounded-2xl`}
             >
