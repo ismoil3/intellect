@@ -72,6 +72,7 @@ const NewsSlider = () => {
     <Container>
       <br />
       <h1
+      id="news"
         className={`text-3xl text-center font-bold ${
           darkMode ? "text-gray-100" : "text-gray-800"
         }`}

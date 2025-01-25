@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
@@ -80,7 +80,7 @@ export default function TeachersSlider() {
       <br />
       <Swiper
         modules={[Pagination, Autoplay]}
-        spaceBetween={24}
+        spaceBetween={16}
         slidesPerView={1}
         pagination={{ clickable: true }}
         autoplay={{
@@ -88,18 +88,17 @@ export default function TeachersSlider() {
           disableOnInteraction: false,
         }}
         breakpoints={{
-          // Ensure all breakpoints are well defined
-          320: {
-            slidesPerView: 1, // Mobile devices
-            spaceBetween: 16,
+          480: {
+            slidesPerView: 1, // Small mobile devices
+            spaceBetween: 20,
           },
           768: {
             slidesPerView: 2, // Tablets
-            spaceBetween: 20,
+            spaceBetween: 24,
           },
           1024: {
-            slidesPerView: 3, // Desktop
-            spaceBetween: 24,
+            slidesPerView: 3, // Laptops and desktops
+            spaceBetween: 32,
           },
         }}
         className="!pb-12"
@@ -109,7 +108,7 @@ export default function TeachersSlider() {
             <div
               className={`max-w-[400px] ${
                 darkMode ? "bg-[#161F2D]" : "bg-white"
-              } overflow-hidden flex flex-col justify-between items-start font-main h-[250px] sm:h-[250px] sm:max-h-[250px] p-6 rounded-2xl`}
+              } overflow-hidden flex flex-col justify-between items-start font-main h-[250px] p-6 rounded-2xl`}
             >
               <div className="flex items-center justify-between gap-4 mb-4">
                 <img
@@ -119,8 +118,8 @@ export default function TeachersSlider() {
                 />
                 <div>
                   <h2
-                    className={`xs2:text-[16px] md:text-xl font-bold ${
-                      !darkMode ? "text-gray-900" : "text-[#FAFAFA]"
+                    className={`text-lg font-bold ${
+                      darkMode ? "text-gray-100" : "text-gray-900"
                     }`}
                   >
                     {teacher.name}
@@ -128,9 +127,13 @@ export default function TeachersSlider() {
                 </div>
               </div>
               <div>
-                <h1 className="text-trueGray700 text-start dark:text-trueGray200 text-[14px] font-[500] mb-[5px]">
-                  <p>{teacher.description}</p>
-                </h1>
+                <p
+                  className={`text-sm ${
+                    darkMode ? "text-gray-200" : "text-gray-700"
+                  }`}
+                >
+                  {teacher.description}
+                </p>
               </div>
             </div>
           </SwiperSlide>

@@ -25,7 +25,8 @@ import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import { useRouter } from "next/navigation";
 import { useSettingStore } from "@/app/store/setting/useSettingStore";
 import ThemeSwitcher from "../../providers/ThemeSwitcher";
-
+import Link from "next/link";
+import FeedOutlinedIcon from "@mui/icons-material/FeedOutlined";
 const Header = () => {
   const { darkMode } = useSettingStore();
   const isDarkMode = darkMode;
@@ -72,15 +73,21 @@ const Header = () => {
                   isDarkMode ? "text-white" : "text-black"
                 } flex gap-6 font-medium`}
               >
-                <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
-                  Home
-                </li>
-                <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
-                  курсы
-                </li>
-                <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
-                  Новости
-                </li>
+                <Link href={"/"}>
+                  <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
+                    Home
+                  </li>
+                </Link>
+                <Link href={"#courses"}>
+                  <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
+                    курсы
+                  </li>
+                </Link>
+                <Link href={"#news"}>
+                  <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
+                    Новости
+                  </li>
+                </Link>
                 <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
                   О нас
                 </li>
@@ -241,51 +248,62 @@ const Header = () => {
         </Drawer>
       </div>
       <Box
-        sx={{
-          position: "fixed",
-          bottom: "0",
-          width: "100%",
-          display: { xs: "block", md: "none" },
-          zIndex: "1000",
-          backgroundColor: isDarkMode ? "#1e1e2f" : "#ffffff",
-          boxShadow: "0px -2px 10px rgba(0, 0, 0, 0.1)",
-        }}
-      >
-        <BottomNavigation
-          value={value}
-          onChange={handleChangeNavigation}
-          sx={{
-            backgroundColor: isDarkMode ? "#1e1e2f" : "#ffffff",
-            color: isDarkMode ? "#ffffff" : "#000000",
-          }}
-        >
-          <BottomNavigationAction
-            label="Home"
-            value="Home"
-            icon={<HouseOutlinedIcon />}
-            sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
-          />
-          <BottomNavigationAction
-            label="Courses"
-            value="courses"
-            icon={<WidgetsOutlinedIcon />}
-            sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
-          />
-          <BottomNavigationAction
-            label="Blog"
-            value="Blog"
-            icon={<LibraryBooksOutlinedIcon />}
-            sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
-          />
-          <BottomNavigationAction
-            label="Language"
-            value="language"
-            icon={<LanguageOutlinedIcon />}
-            onClick={toggleDrawer(true)}
-            sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
-          />
-        </BottomNavigation>
-      </Box>
+  sx={{
+    position: "fixed",
+    bottom: "0",
+    width: "100%",
+    display: { xs: "block", md: "none" },
+    zIndex: "1000",
+    backgroundColor: isDarkMode ? "#1e1e2f" : "#ffffff",
+    boxShadow: "0px -2px 10px rgba(0, 0, 0, 0.1)",
+  }}
+>
+  <BottomNavigation
+    value={value}
+    onChange={(event, newValue) => setValue(newValue)}
+    sx={{
+      backgroundColor: isDarkMode ? "#1e1e2f" : "#ffffff",
+      color: isDarkMode ? "#ffffff" : "#000000",
+    }}
+  >
+    <BottomNavigationAction
+      label="Home"
+      value="/"
+      icon={<HouseOutlinedIcon />}
+      onClick={() => router.push("/")}
+      sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
+    />
+    <BottomNavigationAction
+      label="Courses"
+      value="#courses"
+      icon={<WidgetsOutlinedIcon />}
+      onClick={() => router.push("#courses")}
+      sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
+    />
+    <BottomNavigationAction
+      label="News"
+      value="#news"
+      icon={<FeedOutlinedIcon />}
+      onClick={() => router.push("#news")}
+      sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
+    />
+    <BottomNavigationAction
+      label="Blog"
+      value="/blog"
+      icon={<LibraryBooksOutlinedIcon />}
+      onClick={() => router.push("/blog")}
+      sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
+    />
+    <BottomNavigationAction
+      label="Language"
+      value="language"
+      icon={<LanguageOutlinedIcon />}
+      onClick={toggleDrawer(true)}
+      sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
+    />
+  </BottomNavigation>
+</Box>
+
     </>
   );
 };

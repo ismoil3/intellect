@@ -28,8 +28,8 @@ const COURSES = [
     imageSrc:
       "https://online.omuz.tj/static/media/image%20151.3f56470e62fadd83ddd1.png",
     hasCertificate: true,
-    category: ["tib5","olympiad"],
-        price: 200,
+    category: ["tib5", "olympiad"],
+    price: 200,
   },
   {
     id: "informatics",
@@ -40,7 +40,7 @@ const COURSES = [
       "https://www.softclub.tj/static/media/image%20174.b3c0463fcea1abd8db923c5a5ef356c1.svg",
     hasCertificate: true,
     category: ["tib4"],
-        price: 200,
+    price: 200,
     discountedPrice: 150,
   },
 
@@ -53,8 +53,8 @@ const COURSES = [
       "https://webadminapi.softclub.tj/Images/885fa34a-abf9-4278-9eba-750753a08e8a.png",
     hasCertificate: true,
     comingSoon: true,
-    category: ["tib4", "tib5","olympiad"],
-        price: 200,
+    category: ["tib4", "tib5", "olympiad"],
+    price: 200,
     discountedPrice: 150,
   },
   {
@@ -67,7 +67,7 @@ const COURSES = [
     hasCertificate: true,
     comingSoon: true,
     category: ["tib5", "tib4"],
-        price: 200,
+    price: 200,
     discountedPrice: 150,
   },
   {
@@ -80,7 +80,7 @@ const COURSES = [
     hasCertificate: true,
     comingSoon: true,
     category: ["tib4", "tib5"],
-        price: 200,
+    price: 200,
     discountedPrice: 150,
   },
 
@@ -94,7 +94,7 @@ const COURSES = [
     hasCertificate: true,
     comingSoon: true,
     category: ["english", "tib5"],
-        price: 200,
+    price: 200,
     discountedPrice: 150,
   },
   {
@@ -107,7 +107,7 @@ const COURSES = [
     hasCertificate: true,
     comingSoon: true,
     category: ["olympiad"],
-        price: 200,
+    price: 200,
     discountedPrice: 150,
   },
 ];
@@ -152,14 +152,11 @@ const CustomTabs = styled(Tabs)(({ theme }) => ({
   overflow: "auto",
 }));
 
-
-  // Стайлҳо барои Dark Mode
-
+// Стайлҳо барои Dark Mode
 
 export default function Courses() {
   const [activeTab, setActiveTab] = useState("all");
-  const {darkMode} = useSettingStore()
-
+  const { darkMode } = useSettingStore();
 
   const filteredCourses =
     activeTab === "all"
@@ -173,12 +170,15 @@ export default function Courses() {
   return (
     <Container>
       <h1
+        id="courses"
         className={`text-3xl text-center font-bold ${
           darkMode ? "text-gray-100" : "text-gray-800"
         }`}
       >
         курсы
-      </h1>{" "}<br/><br />
+      </h1>{" "}
+      <br />
+      <br />
       {/* Tabs */}
       <div className="flex justify-center ">
         <CustomTabs
@@ -186,7 +186,7 @@ export default function Courses() {
           onChange={(event, newValue) => setActiveTab(newValue)}
           variant="scrollable"
           scrollButtons="auto"
-          sx={{ mb: 4 ,"& .MuiTabs-scrollButtons":{display:"none"}}}
+          sx={{ mb: 4, "& .MuiTabs-scrollButtons": { display: "none" } }}
         >
           {TABS.map((tab) => (
             <CustomTab
@@ -198,12 +198,11 @@ export default function Courses() {
           ))}
         </CustomTabs>
       </div>
-
       {/* Course Grid */}
       <Grid container spacing={4}>
         {filteredCourses.map((course) => (
           <Grid item key={course.id} xs={12} sm={6} md={4}>
-           <Card
+            <Card
               sx={{
                 height: "100%",
                 display: "flex",
@@ -232,17 +231,13 @@ export default function Courses() {
                     {course.title}
                   </Typography>
                   <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
-                    <Box
-                      sx={{ display: "flex", alignItems: "center", gap: 1 }}
-                    >
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                       <BookOpen size={16} />
                       <Typography variant="body2">
                         Мавзуъ {course.modules}
                       </Typography>
                     </Box>
-                    <Box
-                      sx={{ display: "flex", alignItems: "center", gap: 1 }}
-                    >
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                       <Clock size={16} />
                       <Typography variant="body2">
                         Дарс {course.lessons}
@@ -281,17 +276,13 @@ export default function Courses() {
                         </Typography>
                       </Box>
                     ) : (
-                      <Typography
-                        variant="body1"
-                        sx={{ fontWeight: "bold" }}
-                      >
+                      <Typography variant="body1" sx={{ fontWeight: "bold" }}>
                         {course.price === 0 ? "Ройгон" : `${course.price} TJS`}
                       </Typography>
                     )}
                   </Box>
                 </Box>
               </CardContent>
-             
             </Card>
           </Grid>
         ))}
