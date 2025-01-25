@@ -19,39 +19,39 @@ const TEACHERS = [
     image:
       "https://webadminapi.softclub.tj/Images/a05188eb-1b92-463e-b364-026e618bb804.png",
     description:
-      "Таҷрибаи 3 сол дар тарҳрезии UX/UI вебсайтҳо ва замимаҳои мобилӣ. Дар ТАҚХ Ҳумо ба ҳайси дизайн кор кардааст. Ҳоло дар RIO кор мекунад. Муаллими курси UX/UI дизайн дар академия Softclub.",
+      "Таҷрибаи 3 сол дар тарҳрезии UX/UI вебсайтҳо ва замимаҳои мобилӣ. Дар ТАҚХ Ҳумо ба ҳайси дизайн кор кардааст. Ҳоло дар RIO кор мекунад. Муаллими курси UX/UI дизайн дар академия Intellect.",
   },
   {
     id: 2,
     name: "Каримов Фирдавс",
     image:
-      "https://webadminapi.softclub.tj/Images/a05188eb-1b92-463e-b364-026e618bb804.png",
+      "https://webadminapi.softclub.tj/Images/4a6b0bdc-494c-41f2-89ee-55eb30b92dba.png",
     description:
-      "Таҷрибаи 5 сол дар барномасозии веб. Дар ширкати Алиф кор кардааст. Ҳоло дар Softclub ба ҳайси муаллими курси JavaScript кор мекунад.",
+      "Таҷрибаи 5 сол дар барномасозии веб. Дар ширкати Алиф кор кардааст. Ҳоло дар Intellect ба ҳайси муаллими курси JavaScript кор мекунад.",
   },
   {
     id: 3,
     name: "Раҷабов Умед",
     image:
-      "https://webadminapi.softclub.tj/Images/a05188eb-1b92-463e-b364-026e618bb804.png",
+      "https://webadminapi.softclub.tj/Images/17f755f4-82bf-4245-9767-fcd93e9d7e4f.png",
     description:
-      "Таҷрибаи 4 сол дар соҳаи барномасозӣ. Дар лоиҳаҳои гуногун иштирок кардааст. Муаллими курси Python дар академия Softclub.",
+      "Таҷрибаи 4 сол дар соҳаи барномасозӣ. Дар лоиҳаҳои гуногун иштирок кардааст. Муаллими курси Python дар академия Intellect.",
   },
   {
     id: 4,
-    name: "Назаров Комрон",
+    name: "Наҷибуллоҳ Шамсудинов",
     image:
-      "https://webadminapi.softclub.tj/Images/a05188eb-1b92-463e-b364-026e618bb804.png",
+      "https://webadminapi.softclub.tj/Images/52bc5e18-61e0-4dc1-9461-6054f24c86fa.png",
     description:
-      "Таҷрибаи 6 сол дар соҳаи барномасозӣ. Дар ширкатҳои бузурги IT кор кардааст. Муаллими курси C++ дар академия Softclub.",
+      "Таҷрибаи 6 сол дар соҳаи барномасозӣ. Дар ширкатҳои бузурги IT кор кардааст. Муаллими курси react дар академия Softclub.",
   },
   {
     id: 5,
     name: "Шарипов Фаррух",
     image:
-      "https://webadminapi.softclub.tj/Images/a05188eb-1b92-463e-b364-026e618bb804.png",
+      "https://webadminapi.softclub.tj/Images/32a741c0-6cd2-47f9-a644-b98093ae7193.png",
     description:
-      "Таҷрибаи 3 сол дар соҳаи маркетинг. Дар ширкатҳои гуногун кор кардааст. Муаллими курси маркетинг дар академия Softclub.",
+      "Таҷрибаи 3 сол дар соҳаи маркетинг. Дар ширкатҳои гуногун кор кардааст. Муаллими курси маркетинг дар академия Intellect.",
   },
 ];
 

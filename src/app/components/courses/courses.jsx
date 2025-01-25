@@ -29,6 +29,7 @@ const COURSES = [
       "https://online.omuz.tj/static/media/image%20151.3f56470e62fadd83ddd1.png",
     hasCertificate: true,
     category: ["tib5","olympiad"],
+        price: 200,
   },
   {
     id: "informatics",
@@ -39,6 +40,8 @@ const COURSES = [
       "https://www.softclub.tj/static/media/image%20174.b3c0463fcea1abd8db923c5a5ef356c1.svg",
     hasCertificate: true,
     category: ["tib4"],
+        price: 200,
+    discountedPrice: 150,
   },
 
   {
@@ -51,6 +54,8 @@ const COURSES = [
     hasCertificate: true,
     comingSoon: true,
     category: ["tib4", "tib5","olympiad"],
+        price: 200,
+    discountedPrice: 150,
   },
   {
     id: "physics",
@@ -62,6 +67,8 @@ const COURSES = [
     hasCertificate: true,
     comingSoon: true,
     category: ["tib5", "tib4"],
+        price: 200,
+    discountedPrice: 150,
   },
   {
     id: "math",
@@ -73,6 +80,8 @@ const COURSES = [
     hasCertificate: true,
     comingSoon: true,
     category: ["tib4", "tib5"],
+        price: 200,
+    discountedPrice: 150,
   },
 
   {
@@ -85,6 +94,8 @@ const COURSES = [
     hasCertificate: true,
     comingSoon: true,
     category: ["english", "tib5"],
+        price: 200,
+    discountedPrice: 150,
   },
   {
     id: "olympiad",
@@ -96,6 +107,8 @@ const COURSES = [
     hasCertificate: true,
     comingSoon: true,
     category: ["olympiad"],
+        price: 200,
+    discountedPrice: 150,
   },
 ];
 
@@ -190,7 +203,7 @@ export default function Courses() {
       <Grid container spacing={4}>
         {filteredCourses.map((course) => (
           <Grid item key={course.id} xs={12} sm={6} md={4}>
-            <Card
+           <Card
               sx={{
                 height: "100%",
                 display: "flex",
@@ -202,27 +215,10 @@ export default function Courses() {
                 },
                 borderRadius: "1rem",
                 position: "relative",
-                backgroundColor: darkMode? "#141D2A": "#fff",
-                color: darkMode? "white": ""
+                backgroundColor: darkMode ? "#141D2A" : "#fff",
+                color: darkMode ? "white" : "",
               }}
             >
-              {false && (
-                <Box
-                  sx={{
-                    position: "absolute",
-                    top: 16,
-                    right: -35,
-                    transform: "rotate(45deg)",
-                    bgcolor: "primary.main",
-                    color: "white",
-                    px: 5,
-                    py: 1,
-                    fontSize: "0.875rem",
-                  }}
-                >
-                  Ба наздики!
-                </Box>
-              )}
               <CardContent sx={{ flexGrow: 1, display: "flex", gap: 2 }}>
                 <Image
                   src={course.imageSrc || "/placeholder.svg"}
@@ -235,37 +231,67 @@ export default function Courses() {
                   <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
                     {course.title}
                   </Typography>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      gap: 2,
-                      alignItems: "center",
-                      mb: 1,
-                    }}
-                  >
-                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+                    <Box
+                      sx={{ display: "flex", alignItems: "center", gap: 1 }}
+                    >
                       <BookOpen size={16} />
-                      <Typography variant="body2" >
+                      <Typography variant="body2">
                         Мавзуъ {course.modules}
                       </Typography>
                     </Box>
-                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                    <Box
+                      sx={{ display: "flex", alignItems: "center", gap: 1 }}
+                    >
                       <Clock size={16} />
-                      <Typography variant="body2" >
+                      <Typography variant="body2">
                         Дарс {course.lessons}
                       </Typography>
                     </Box>
                   </Box>
                   {course.hasCertificate && (
-                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 1,
+                      }}
+                    >
                       <Award size={16} />
-                      <Typography variant="body2" >
-                        Сертификат
-                      </Typography>
+                      <Typography variant="body2">Сертификат</Typography>
                     </Box>
                   )}
+                  {/* Price Section */}
+                  <Box sx={{ mt: 2 }}>
+                    {course.discountedPrice ? (
+                      <Box
+                        sx={{ display: "flex", gap: 1, alignItems: "center" }}
+                      >
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            textDecoration: "line-through",
+                            color: "red",
+                          }}
+                        >
+                          {course.price} TJS
+                        </Typography>
+                        <Typography variant="body1" sx={{ fontWeight: "bold" }}>
+                          {course.discountedPrice} TJS
+                        </Typography>
+                      </Box>
+                    ) : (
+                      <Typography
+                        variant="body1"
+                        sx={{ fontWeight: "bold" }}
+                      >
+                        {course.price === 0 ? "Ройгон" : `${course.price} TJS`}
+                      </Typography>
+                    )}
+                  </Box>
                 </Box>
               </CardContent>
+             
             </Card>
           </Grid>
         ))}
