@@ -168,129 +168,139 @@ export default function Courses() {
         );
 
   return (
-    <Container>
-      <h1
-        id="courses"
-        className={`text-3xl text-center font-bold ${
-          darkMode ? "text-gray-100" : "text-gray-800"
-        }`}
-      >
-        курсы
-      </h1>{" "}
-      <br />
-      <br />
-      {/* Tabs */}
-      <div className="flex justify-center ">
-        <CustomTabs
-          value={activeTab}
-          onChange={(event, newValue) => setActiveTab(newValue)}
-          variant="scrollable"
-          scrollButtons="auto"
-          sx={{ mb: 4, "& .MuiTabs-scrollButtons": { display: "none" } }}
+    <div id="courses">
+      <Container>
+        <h1
+          className={`text-3xl text-center font-bold ${
+            darkMode ? "text-gray-100" : "text-gray-800"
+          }`}
         >
-          {TABS.map((tab) => (
-            <CustomTab
-              key={tab.id}
-              value={tab.id}
-              label={tab.label}
-              disableRipple
-            />
-          ))}
-        </CustomTabs>
-      </div>
-      {/* Course Grid */}
-      <Grid container spacing={4}>
-        {filteredCourses.map((course) => (
-          <Grid item key={course.id} xs={12} sm={6} md={4}>
-            <Card
-              sx={{
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                transition: "box-shadow 0.3s",
-                "&:hover": {
-                  transform: "scale(0.9)",
-                  transition: "transform 0.3s ease-in-out",
-                },
-                borderRadius: "1rem",
-                position: "relative",
-                backgroundColor: darkMode ? "#141D2A" : "#fff",
-                color: darkMode ? "white" : "",
-              }}
-            >
-              <CardContent sx={{ flexGrow: 1, display: "flex", gap: 2 }}>
-                <Image
-                  src={course.imageSrc || "/placeholder.svg"}
-                  alt={course.title}
-                  width={64}
-                  height={64}
-                  style={{ borderRadius: "8px", objectFit: "contain" }}
-                />
-                <Box sx={{ flexGrow: 1 }}>
-                  <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
-                    {course.title}
-                  </Typography>
-                  <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
-                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                      <BookOpen size={16} />
-                      <Typography variant="body2">
-                        Мавзуъ {course.modules}
-                      </Typography>
-                    </Box>
-                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                      <Clock size={16} />
-                      <Typography variant="body2">
-                        Дарс {course.lessons}
-                      </Typography>
-                    </Box>
-                  </Box>
-                  {course.hasCertificate && (
-                    <Box
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 1,
-                      }}
-                    >
-                      <Award size={16} />
-                      <Typography variant="body2">Сертификат</Typography>
-                    </Box>
-                  )}
-                  {/* Price Section */}
-                  <Box sx={{ mt: 2 }}>
-                    {course.discountedPrice ? (
+          курсы
+        </h1>{" "}
+        <br />
+        <br />
+        {/* Tabs */}
+        <div className="flex justify-center ">
+          <CustomTabs
+            value={activeTab}
+            onChange={(event, newValue) => setActiveTab(newValue)}
+            variant="scrollable"
+            scrollButtons="auto"
+            sx={{ mb: 4, "& .MuiTabs-scrollButtons": { display: "none" } }}
+          >
+            {TABS.map((tab) => (
+              <CustomTab
+                key={tab.id}
+                value={tab.id}
+                label={tab.label}
+                disableRipple
+              />
+            ))}
+          </CustomTabs>
+        </div>
+        {/* Course Grid */}
+        <Grid container spacing={4}>
+          {filteredCourses.map((course) => (
+            <Grid item key={course.id} xs={12} sm={6} md={4}>
+              <Card
+                sx={{
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  transition: "box-shadow 0.3s",
+                  "&:hover": {
+                    transform: "scale(0.9)",
+                    transition: "transform 0.3s ease-in-out",
+                  },
+                  borderRadius: "1rem",
+                  position: "relative",
+                  backgroundColor: darkMode ? "#141D2A" : "#fff",
+                  color: darkMode ? "white" : "",
+                }}
+              >
+                <CardContent sx={{ flexGrow: 1, display: "flex", gap: 2 }}>
+                  <Image
+                    src={course.imageSrc || "/placeholder.svg"}
+                    alt={course.title}
+                    width={64}
+                    height={64}
+                    style={{ borderRadius: "8px", objectFit: "contain" }}
+                  />
+                  <Box sx={{ flexGrow: 1 }}>
+                    <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
+                      {course.title}
+                    </Typography>
+                    <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
                       <Box
-                        sx={{ display: "flex", gap: 1, alignItems: "center" }}
+                        sx={{ display: "flex", alignItems: "center", gap: 1 }}
                       >
-                        <Typography
-                          variant="body2"
-                          sx={{
-                            textDecoration: "line-through",
-                            color: "red",
-                          }}
-                        >
-                          {course.price} TJS
-                        </Typography>
-                        <Typography variant="body1" sx={{ fontWeight: "bold" }}>
-                          {course.discountedPrice} TJS
+                        <BookOpen size={16} />
+                        <Typography variant="body2">
+                          Мавзуъ {course.modules}
                         </Typography>
                       </Box>
-                    ) : (
-                      <Typography variant="body1" sx={{ fontWeight: "bold" }}>
-                        {course.price === 0 ? "Ройгон" : `${course.price} TJS`}
-                      </Typography>
+                      <Box
+                        sx={{ display: "flex", alignItems: "center", gap: 1 }}
+                      >
+                        <Clock size={16} />
+                        <Typography variant="body2">
+                          Дарс {course.lessons}
+                        </Typography>
+                      </Box>
+                    </Box>
+                    {course.hasCertificate && (
+                      <Box
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 1,
+                        }}
+                      >
+                        <Award size={16} />
+                        <Typography variant="body2">Сертификат</Typography>
+                      </Box>
                     )}
+                    {/* Price Section */}
+                    <Box sx={{ mt: 2 }}>
+                      {course.discountedPrice ? (
+                        <Box
+                          sx={{ display: "flex", gap: 1, alignItems: "center" }}
+                        >
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              textDecoration: "line-through",
+                              color: "red",
+                            }}
+                          >
+                            {course.price} TJS
+                          </Typography>
+                          <Typography
+                            variant="body1"
+                            sx={{ fontWeight: "bold" }}
+                          >
+                            {course.discountedPrice} TJS
+                          </Typography>
+                        </Box>
+                      ) : (
+                        <Typography variant="body1" sx={{ fontWeight: "bold" }}>
+                          {course.price === 0
+                            ? "Ройгон"
+                            : `${course.price} TJS`}
+                        </Typography>
+                      )}
+                    </Box>
                   </Box>
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-      <br />
-      <br />
-      <br />
-      <br />
-    </Container>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+        <br />
+        <br />
+        <br />
+        <br />
+      </Container>
+    </div>
   );
 }

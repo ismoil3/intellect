@@ -17,7 +17,7 @@ const TEACHERS = [
     id: 1,
     name: "Салимзода Абдурахим",
     image:
-      "https://webadminapi.softclub.tj/Images/a05188eb-1b92-463e-b364-026e618bb804.png",
+      "https://mms.businesswire.com/media/20250107967213/en/2344627/5/Print_1800x2400JonU.jpg",
     description:
       "Таҷрибаи 3 сол дар тарҳрезии UX/UI вебсайтҳо ва замимаҳои мобилӣ. Дар ТАҚХ Ҳумо ба ҳайси дизайн кор кардааст. Ҳоло дар RIO кор мекунад. Муаллими курси UX/UI дизайн дар академия Intellect.",
   },
@@ -25,7 +25,7 @@ const TEACHERS = [
     id: 2,
     name: "Каримов Фирдавс",
     image:
-      "https://webadminapi.softclub.tj/Images/4a6b0bdc-494c-41f2-89ee-55eb30b92dba.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvVrxInRDXHGknoxzub3DIMhuHwuwRau1mDA&s",
     description:
       "Таҷрибаи 5 сол дар барномасозии веб. Дар ширкати Алиф кор кардааст. Ҳоло дар Intellect ба ҳайси муаллими курси JavaScript кор мекунад.",
   },
@@ -33,23 +33,23 @@ const TEACHERS = [
     id: 3,
     name: "Раҷабов Умед",
     image:
-      "https://webadminapi.softclub.tj/Images/17f755f4-82bf-4245-9767-fcd93e9d7e4f.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhcHEc7GKS8AMFJf8qBjpRgpIGQQieC2VFmg&s",
     description:
       "Таҷрибаи 4 сол дар соҳаи барномасозӣ. Дар лоиҳаҳои гуногун иштирок кардааст. Муаллими курси Python дар академия Intellect.",
   },
   {
     id: 4,
-    name: "Наҷибуллоҳ Шамсудинов",
+    name: " Шамсудин",
     image:
-      "https://webadminapi.softclub.tj/Images/52bc5e18-61e0-4dc1-9461-6054f24c86fa.png",
+      "https://www.cambridgenetwork.co.uk/sites/default/files/styles/article_main/public/JPH.jpg?itok=yh-yQzry",
     description:
-      "Таҷрибаи 6 сол дар соҳаи барномасозӣ. Дар ширкатҳои бузурги IT кор кардааст. Муаллими курси react дар академия Softclub.",
+      "Таҷрибаи 6 сол дар соҳаи барномасозӣ. Дар ширкатҳои бузурги IT кор кардааст. Муаллими курси tib 4 дар академия Intellect.",
   },
   {
     id: 5,
     name: "Шарипов Фаррух",
     image:
-      "https://webadminapi.softclub.tj/Images/32a741c0-6cd2-47f9-a644-b98093ae7193.png",
+      "https://mma.prnewswire.com/media/873524/Bishop_Fox_headshot_rose__002.jpg?w=300",
     description:
       "Таҷрибаи 3 сол дар соҳаи маркетинг. Дар ширкатҳои гуногун кор кардааст. Муаллими курси маркетинг дар академия Intellect.",
   },

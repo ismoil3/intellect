@@ -154,7 +154,7 @@ export default function ContactForm() {
               {/* Кнопка отправки */}
               <button
                 type="submit"
-                className="h-12 sm:h-14 w-full md:w-auto px-6 sm:px-10 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-purple-400 focus:outline-none transition-all"
+                className="h-12 sm:h-14 w-full md:w-auto px-6 sm:px-10 bg-[#0B95CE] text-white font-bold rounded-lg focus:ring-2 focus:ring-purple-400 focus:outline-none transition-all"
               >
                 Отправить
               </button>

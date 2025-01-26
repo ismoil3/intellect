@@ -31,7 +31,7 @@ export default function AboutIntellect() {
           <div className="p-[20px]">
             <h1
               className={`text-4xl md:text-5xl font-bold mb-4 ${
-                darkMode ? "text-white" : "text-[#9370DB]"
+                darkMode ? "text-white" : "text-[#0B95CE]"
               }`}
             >
               <span>Intellect</span> —

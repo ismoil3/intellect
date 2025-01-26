@@ -15,14 +15,12 @@ import {
   List,
   ListItem,
 } from "@mui/material";
-import { DarkModeSwitch } from "react-toggle-dark-mode";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import HouseOutlinedIcon from "@mui/icons-material/HouseOutlined";
 import WidgetsOutlinedIcon from "@mui/icons-material/WidgetsOutlined";
 import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
-import { useRouter } from "next/navigation";
 import { useSettingStore } from "@/app/store/setting/useSettingStore";
 import ThemeSwitcher from "../../providers/ThemeSwitcher";
 import Link from "next/link";
@@ -75,12 +73,12 @@ const Header = () => {
               >
                 <Link href={"/"}>
                   <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
-                    Home
+                    Главная
                   </li>
                 </Link>
                 <Link href={"#courses"}>
                   <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
-                    курсы
+                    Курсы
                   </li>
                 </Link>
                 <Link href={"#news"}>
@@ -88,9 +86,11 @@ const Header = () => {
                     Новости
                   </li>
                 </Link>
-                <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
-                  О нас
-                </li>
+                <Link href={"/pages/about"}>
+                  <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
+                    О нас
+                  </li>
+                </Link>
               </ul>
             </Box>
 
@@ -100,8 +100,9 @@ const Header = () => {
                 color: "white",
                 gap: "15px",
                 alignItems: "center",
+                display: "flex",
+                justifyContent: "space-around",
               }}
-              className="flex gap-6 items-center"
             >
               <FormControlLabel control={<ThemeSwitcher />} />
               <FormControl
@@ -247,67 +248,67 @@ const Header = () => {
           </Box>
         </Drawer>
       </div>
-     
-<Box
-  sx={{
-    position: "fixed",
-    bottom: "0",
-    width: "100%",
-    display: { xs: "block", md: "none" },
-    zIndex: "1000",
-    backgroundColor: isDarkMode ? "#1e1e2f" : "#ffffff",
-    boxShadow: "0px -2px 10px rgba(0, 0, 0, 0.1)",
-  }}
->
-  <BottomNavigation
-    value={value}
-    onChange={(event, newValue) => setValue(newValue)}
-    sx={{
-      backgroundColor: isDarkMode ? "#1e1e2f" : "#ffffff",
-      color: isDarkMode ? "#ffffff" : "#000000",
-    }}
-  >
-    <BottomNavigationAction
-      label="Home"
-      value="/"
-      icon={<HouseOutlinedIcon />}
-      component={Link}
-      href="/"
-      sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
-    />
-    <BottomNavigationAction
-      label="Courses"
-      value="courses"
-      icon={<WidgetsOutlinedIcon />}
-      component={Link}
-      href="/#courses"
-      sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
-    />
-    <BottomNavigationAction
-      label="News"
-      value="news"
-      icon={<FeedOutlinedIcon />}
-      component={Link}
-      href="/#news"
-      sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
-    />
-    <BottomNavigationAction
-      label="Blog"
-      value="/pages/blog"
-      icon={<LibraryBooksOutlinedIcon />}
-      component={Link}
-      href="/pages/blog"
-      sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
-    />
-    <BottomNavigationAction
-      label="Language"
-      value="language"
-      icon={<LanguageOutlinedIcon />}
-      onClick={toggleDrawer(true)}
-      sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
-    />
-  </BottomNavigation>
-</Box>
+
+      <Box
+        sx={{
+          position: "fixed",
+          bottom: "0",
+          width: "100%",
+          display: { xs: "block", md: "none" },
+          zIndex: "1000",
+          backgroundColor: isDarkMode ? "#1e1e2f" : "#ffffff",
+          boxShadow: "0px -2px 10px rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <BottomNavigation
+          value={value}
+          onChange={(event, newValue) => setValue(newValue)}
+          sx={{
+            backgroundColor: isDarkMode ? "#1e1e2f" : "#ffffff",
+            color: isDarkMode ? "#ffffff" : "#000000",
+          }}
+        >
+          <BottomNavigationAction
+            label="Home"
+            value="/"
+            icon={<HouseOutlinedIcon />}
+            component={Link}
+            href="/"
+            sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
+          />
+          <BottomNavigationAction
+            label="Courses"
+            value="courses"
+            icon={<WidgetsOutlinedIcon />}
+            component={Link}
+            href="/#courses"
+            sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
+          />
+          <BottomNavigationAction
+            label="News"
+            value="news"
+            icon={<FeedOutlinedIcon />}
+            component={Link}
+            href="/#news"
+            sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
+          />
+          <BottomNavigationAction
+            label="About"
+            value="about"
+            icon={<LibraryBooksOutlinedIcon />}
+            component={Link}
+            href="/pages/about"
+            sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
+          />
+          <BottomNavigationAction
+            label="Language"
+            value="Language"
+            icon={<LanguageOutlinedIcon />}
+            onClick={toggleDrawer(true)}
+            sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
+          />
+        </BottomNavigation>
+      </Box>
     </>
   );
 };
