@@ -31,7 +31,7 @@ const About = () => {
       {/* Матни аввалия */}
       <div>
         <h1
-          className={`text-[#0B95CE] text-[28px] sm:text-[52px] font-bold ${textColor}`}
+          className={`text-[#0B95CE] text-[28px] sm:text-[52px] font-bold `}
         >
           Intellect
         </h1>
@@ -67,6 +67,7 @@ const About = () => {
               borderRadius: "32px",
               boxShadow: "0 8px 16px rgba(0,0,0,0.2)",
               transition: "transform 0.3s ease",
+              minHeight:"200px"
             }}
             onMouseOver={(e) =>
               (e.currentTarget.style.transform = "scale(1.05)")
