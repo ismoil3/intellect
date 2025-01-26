@@ -90,9 +90,9 @@ const ThemeSwitcher = ({ props }) => {
 
 
             <FormControlLabel
-                control={<MaterialUISwitch checked={darkMode}
+                control={<MaterialUISwitch checked={darkMode} defaultChecked={darkMode}
                     onChange={() => setDarkMode(!darkMode)} sx={{
-                        m: 1, 
+                        m: 1,
                     }} />}
             />
         </div>
