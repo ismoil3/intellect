@@ -9,8 +9,9 @@ export default function ContactCard() {
 
   return (
     <Container>
+      <h1 className="lg:text-[60px] mt-[20px] max-w-[1088px] m-auto sm:text-[36px] font-[700]  pb-[40px]">Связаться с нами</h1>
       <div
-        className={`mt-[50px] p-6 rounded-2xl shadow-md max-w-[1088px] m-auto ${
+        className={`mt-[20px] p-6 rounded-2xl shadow-md max-w-[1088px] m-auto ${
           darkMode ? "bg-[#161F2D] text-gray-100" : "bg-[#EFF6FF] text-[#202d57]"
         }`}
       >
