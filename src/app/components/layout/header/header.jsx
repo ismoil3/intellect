@@ -104,7 +104,8 @@ const Header = () => {
                 justifyContent: "space-around",
               }}
             >
-              <FormControlLabel control={<ThemeSwitcher />} />
+              <ThemeSwitcher />
+
               <FormControl
                 sx={{ m: 1, minWidth: 50, display: { xs: "none", md: "flex" } }}
                 size="small"
