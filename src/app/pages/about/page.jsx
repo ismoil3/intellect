@@ -5,6 +5,7 @@ import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import ReactPlayer from "react-player";
 import { useSettingStore } from "@/app/store/setting/useSettingStore";
 import Container from "@/app/components/shared/container/container";
+import TeachersSlider from "@/app/components/teachers/teachers";
 
 const About = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +26,8 @@ const About = () => {
   const modalBgColor = darkMode ? "bg-gray-900" : "bg-white";
 
   return (
-    <Container>
+<>
+<Container>
       {/* Матни аввалия */}
       <div>
         <h1
@@ -194,11 +196,13 @@ const About = () => {
       {/* team */}
       <section className="container mx-auto mt-[60px] px-2">
         <div>
-          <h1
-            className={`text-[20px] sm:text-[28px] font-bold mb-4 ${textColor}`}
-          >
-            Дастаи мо
-          </h1>
+        <h1
+        className={`text-3xl text-center font-bold ${
+          darkMode ? "text-gray-100" : "text-gray-800"
+        }`}
+      >
+        Наши преподаватели
+      </h1><br /><br />
         </div>
         <div className="grid md:grid-cols-2 gap-[28px]">
           <div
@@ -358,7 +362,10 @@ const About = () => {
           </div>
         </div>
       </section>
-    </Container>
+    
+    </Container><br /><br />
+    <TeachersSlider/>
+    </>
   );
 };
 
