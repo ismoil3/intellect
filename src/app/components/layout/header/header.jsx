@@ -6,7 +6,6 @@ import Container from "../../shared/container/container";
 import {
   Box,
   Button,
-  FormControlLabel,
   FormControl,
   Select,
   MenuItem,
@@ -25,6 +24,7 @@ import { useSettingStore } from "@/app/store/setting/useSettingStore";
 import ThemeSwitcher from "../../providers/ThemeSwitcher";
 import Link from "next/link";
 import FeedOutlinedIcon from "@mui/icons-material/FeedOutlined";
+import { Contact } from "lucide-react";
 const Header = () => {
   const { darkMode } = useSettingStore();
   const isDarkMode = darkMode;
@@ -44,7 +44,8 @@ const Header = () => {
         <Container>
           <div className="flex items-center justify-between py-4">
             <div>
-              <Box sx={{ display: "flex", alignItems: "center", gap: "15px" }}>
+             <Link href={"/"}>
+             <Box sx={{ display: "flex", alignItems: "center", gap: "15px" }}>
                 <Image
                   src={logo}
                   className="rounded-full"
@@ -62,6 +63,7 @@ const Header = () => {
                   </p>
                 </Box>
               </Box>
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
@@ -71,17 +73,12 @@ const Header = () => {
                   isDarkMode ? "text-white" : "text-black"
                 } flex gap-6 font-medium`}
               >
-                <Link href={"/"}>
-                  <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
-                    Главная
-                  </li>
-                </Link>
-                <Link href={"#courses"}>
+                <Link href={"/#courses"}>
                   <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
                     Курсы
                   </li>
                 </Link>
-                <Link href={"#news"}>
+                <Link href={"/#news"}>
                   <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
                     Новости
                   </li>
@@ -89,6 +86,11 @@ const Header = () => {
                 <Link href={"/pages/about"}>
                   <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
                     О нас
+                  </li>
+                </Link>
+                <Link href={"/pages/contact"}>
+                  <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
+                    Контакты
                   </li>
                 </Link>
               </ul>
@@ -270,14 +272,6 @@ const Header = () => {
           }}
         >
           <BottomNavigationAction
-            label="Home"
-            value="/"
-            icon={<HouseOutlinedIcon />}
-            component={Link}
-            href="/"
-            sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
-          />
-          <BottomNavigationAction
             label="Courses"
             value="courses"
             icon={<WidgetsOutlinedIcon />}
@@ -299,6 +293,14 @@ const Header = () => {
             icon={<LibraryBooksOutlinedIcon />}
             component={Link}
             href="/pages/about"
+            sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
+          />
+          <BottomNavigationAction
+            label="Contact"
+            value="contact"
+            icon={<Contact />}
+            component={Link}
+            href="/pages/contact"
             sx={{ color: isDarkMode ? "#ffffff" : "#000000" }}
           />
           <BottomNavigationAction

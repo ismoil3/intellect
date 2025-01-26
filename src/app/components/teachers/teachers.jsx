@@ -19,7 +19,7 @@ const TEACHERS = [
     image:
       "https://mms.businesswire.com/media/20250107967213/en/2344627/5/Print_1800x2400JonU.jpg",
     description:
-      "Таҷрибаи 3 сол дар тарҳрезии UX/UI вебсайтҳо ва замимаҳои мобилӣ. Дар ТАҚХ Ҳумо ба ҳайси дизайн кор кардааст. Ҳоло дар RIO кор мекунад. Муаллими курси UX/UI дизайн дар академия Intellect.",
+      "Таҷрибаи 3 сол дар маллими дар дар донишгохи тибби . Дар ТАҚХ Intellect ба ҳайси муаллими кор кардааст. Ҳолохам дар Intellect кор мекунад. Муаллими курси кластер 4  дар академия Intellect.",
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const TEACHERS = [
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvVrxInRDXHGknoxzub3DIMhuHwuwRau1mDA&s",
     description:
-      "Таҷрибаи 5 сол дар барномасозии веб. Дар ширкати Алиф кор кардааст. Ҳоло дар Intellect ба ҳайси муаллими курси JavaScript кор мекунад.",
+      "Таҷрибаи 5 сол дар дар хукукшинос. Дар дар душанбе кор кардааст. Ҳоло дар Intellect ба ҳайси муаллими  кор мекунад.",
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const TEACHERS = [
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhcHEc7GKS8AMFJf8qBjpRgpIGQQieC2VFmg&s",
     description:
-      "Таҷрибаи 4 сол дар соҳаи барномасозӣ. Дар лоиҳаҳои гуногун иштирок кардааст. Муаллими курси Python дар академия Intellect.",
+      "Таҷрибаи 4 сол дар соҳаи духтури. Дар лоиҳаҳои гуногун иштирок кардааст. Муаллими курси химия дар академия Intellect.",
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ const TEACHERS = [
     image:
       "https://www.cambridgenetwork.co.uk/sites/default/files/styles/article_main/public/JPH.jpg?itok=yh-yQzry",
     description:
-      "Таҷрибаи 6 сол дар соҳаи барномасозӣ. Дар ширкатҳои бузурги IT кор кардааст. Муаллими курси tib 4 дар академия Intellect.",
+      "Таҷрибаи 6 сол дар соҳаи олипиада. Дар олимпиадахои бузурги осиёи миёна кор кардааст. Муаллими курси олимпиада  дар академия Intellect.",
   },
   {
     id: 5,
@@ -51,7 +51,7 @@ const TEACHERS = [
     image:
       "https://mma.prnewswire.com/media/873524/Bishop_Fox_headshot_rose__002.jpg?w=300",
     description:
-      "Таҷрибаи 3 сол дар соҳаи маркетинг. Дар ширкатҳои гуногун кор кардааст. Муаллими курси маркетинг дар академия Intellect.",
+      "Таҷрибаи 3 сол дар соҳаи муаллими. Дар ширкатҳои гуногун кор кардааст. Муаллими курси физика дар академия Intellect.",
   },
 ];
 
