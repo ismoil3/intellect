@@ -25,7 +25,7 @@ export default function ContactCard() {
                 }`}
               />
               <h2
-                className={`text-2xl font-semibold ${
+                className={`text-4xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
@@ -36,7 +36,7 @@ export default function ContactCard() {
             {/* Address */}
             <div>
               <h3
-                className={`text-lg font-semibold ${
+                className={`text-xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
@@ -50,7 +50,7 @@ export default function ContactCard() {
             {/* Contacts */}
             <div>
               <h3
-                className={`text-lg font-semibold ${
+                className={`text-xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
@@ -85,7 +85,7 @@ export default function ContactCard() {
             {/* Working Hours */}
             <div>
               <h3
-                className={`text-lg font-semibold ${
+                className={`text-xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
@@ -130,7 +130,7 @@ export default function ContactCard() {
                 }`}
               />
               <h2
-                className={`text-2xl font-semibold ${
+                className={`text-4xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
@@ -141,7 +141,7 @@ export default function ContactCard() {
             {/* Address */}
             <div>
               <h3
-                className={`text-lg font-semibold ${
+                className={`text-xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
@@ -155,7 +155,7 @@ export default function ContactCard() {
             {/* Contacts */}
             <div>
               <h3
-                className={`text-lg font-semibold ${
+                className={`text-xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
@@ -190,7 +190,7 @@ export default function ContactCard() {
             {/* Working Hours */}
             <div>
               <h3
-                className={`text-lg font-semibold ${
+                className={`text-xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
@@ -235,7 +235,7 @@ export default function ContactCard() {
                 }`}
               />
               <h2
-                className={`text-2xl font-semibold ${
+                className={`text-4xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
@@ -246,7 +246,7 @@ export default function ContactCard() {
             {/* Address */}
             <div>
               <h3
-                className={`text-lg font-semibold ${
+                className={`text-xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
@@ -260,7 +260,7 @@ export default function ContactCard() {
             {/* Contacts */}
             <div>
               <h3
-                className={`text-lg font-semibold ${
+                className={`text-xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
@@ -295,7 +295,7 @@ export default function ContactCard() {
             {/* Working Hours */}
             <div>
               <h3
-                className={`text-lg font-semibold ${
+                className={`text-xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
@@ -340,7 +340,7 @@ export default function ContactCard() {
                 }`}
               />
               <h2
-                className={`text-2xl font-semibold ${
+                className={`text-4xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
@@ -351,7 +351,7 @@ export default function ContactCard() {
             {/* Address */}
             <div>
               <h3
-                className={`text-lg font-semibold ${
+                className={`text-xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
@@ -365,7 +365,7 @@ export default function ContactCard() {
             {/* Contacts */}
             <div>
               <h3
-                className={`text-lg font-semibold ${
+                className={`text-xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
@@ -400,7 +400,7 @@ export default function ContactCard() {
             {/* Working Hours */}
             <div>
               <h3
-                className={`text-lg font-semibold ${
+                className={`text-xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
@@ -445,7 +445,7 @@ export default function ContactCard() {
                 }`}
               />
               <h2
-                className={`text-2xl font-semibold ${
+                className={`text-4xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
@@ -456,7 +456,7 @@ export default function ContactCard() {
             {/* Address */}
             <div>
               <h3
-                className={`text-lg font-semibold ${
+                className={`text-xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
@@ -470,7 +470,7 @@ export default function ContactCard() {
             {/* Contacts */}
             <div>
               <h3
-                className={`text-lg font-semibold ${
+                className={`text-xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
@@ -505,7 +505,7 @@ export default function ContactCard() {
             {/* Working Hours */}
             <div>
               <h3
-                className={`text-lg font-semibold ${
+                className={`text-xl font-semibold ${
                   darkMode ? "text-gray-100" : "text-gray-800"
                 }`}
               >
