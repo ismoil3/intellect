@@ -1,5 +1,7 @@
 import { Box } from "@mui/material";
 import Container from "../../shared/container/container";
+import { Instagram, YouTube } from "@mui/icons-material";
+import { FacebookIcon, Twitter } from "lucide-react";
 
 export default function Footer() {
     const year = new Date().getFullYear();
@@ -48,37 +50,40 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white">Follow Us</h3>
             <div className="mt-4 flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/intellect.edu.tj1/"
+                target="_blank"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-blue-500 transition-all"
                 aria-label="Facebook"
               >
-                🌐
+                <FacebookIcon/>
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/intellect.edu.tj/"
+                target="_blank"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-purple-500 transition-all"
                 aria-label="Instagram"
               >
-                📸
+                <Instagram/>
               </a>
               <a
                 href="#"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-blue-400 transition-all"
                 aria-label="Twitter"
               >
-                🐦
+                <Twitter/>
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/@%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82-%D0%91%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F"
+                target="_blank"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-red-500 transition-all"
                 aria-label="YouTube"
               >
-                ▶️
+                <YouTube/>
               </a>
             </div>
             <h3 className="text-lg font-semibold text-white mt-6">Contact Us</h3>
-            <p className="text-gray-400 mt-2">Email: support@intellect.com</p>
-            <p className="text-gray-400">Phone: +1 (234) 567-890</p>
+            <p className="text-gray-400 mt-2">Email: intellect.edu@gmail.com</p>
+            <p className="text-gray-400">Phone: +992 (554) 16-16-16</p>
           </div>
         </Container>
         <Box sx={{display: {xs:"block",lg:"none"}}}>

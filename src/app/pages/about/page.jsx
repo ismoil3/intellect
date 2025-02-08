@@ -28,21 +28,17 @@ const About = () => {
   return (
     <>
       <Container>
-        {/* Матни аввалия */}
-        <div>
-          <h1
-            className={`text-[#0B95CE] text-[28px] sm:text-[52px] font-bold `}
-          >
+        {/* Hero Section */}
+        <section className="text-center mt-[70px] space-y-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-blue-600">
             Intellect
           </h1>
-          <p
-            className={`text-[16px] sm:text-[22px] max-w-[800px] font-medium ${textColor}`}
-          >
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto">
             Миссия Intellect — дать возможность каждому быть актуальным и
             востребованным специалистом прямо сейчас. Вне зависимости от
             возраста и географии.
           </p>
-        </div>
+        </section>
 
         {/* Тасвир ва модал */}
         <div
@@ -146,10 +142,10 @@ const About = () => {
               >
                 <ReactPlayer
                   ref={playerRef} // Референс барои ReactPlayer
-                  url="https://cdn.skillbox.pro/wbd-front/skillbox-static/general/video/Skillbox-IT.webm"
+                  url="/about.mp4"
                   controls
                   width="100%"
-                  height="100%"
+                  height="90vh"
                 />
               </Box>
             </Box>
@@ -208,7 +204,7 @@ const About = () => {
                 darkMode ? "text-gray-100" : "text-gray-800"
               }`}
             >
-              Наши преподаватели
+              Наша команда
             </h1>
             <br />
             <br />
@@ -228,7 +224,7 @@ const About = () => {
             >
               <div className="flex flex-col sm:flex-row justify-self-start sm:items-center gap-[28px]">
                 <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTIjPOy02fH2Rgf-dbij6nWY9SjUKg-uMFqA&s"
+                  src="https://instagram.fdyu4-1.fna.fbcdn.net/v/t51.2885-19/422006637_3645922842299287_5364996235817441624_n.jpg?_nc_ht=instagram.fdyu4-1.fna.fbcdn.net&_nc_cat=107&_nc_oc=Q6cZ2AHHseVpWALx8h7v3atDuG91QOQ0FWoezcm8TxGuvMvmKGt12ScTlbNTDUd0U6ec2yo&_nc_ohc=ap5Ag3_Q95kQ7kNvgE2Q9SR&_nc_gid=f0c46780ef8b45de97a28aef8cb7fc6a&edm=APoiHPcBAAAA&ccb=7-5&oh=00_AYCQeWk8aUkcTl-6yBchsw3SXHEVXMAs91xfnkIwPDnJGA&oe=67AD3004&_nc_sid=22de04"
                   alt="john"
                   loading="lazy"
                   width="100px"
@@ -241,7 +237,7 @@ const About = () => {
                       darkMode ? "text-[#0EA5E9]" : "text-teritary"
                     } mb-[6px]`}
                   >
-                    john jones
+                    Олимов Олимҷон
                   </h3>
                   <div className="w-[35%] border-b-[3px] border-[#94A3B8]"></div>
                   <p
@@ -272,23 +268,6 @@ const About = () => {
                   овардем, ки ба шумо дар омӯхтану фаҳмидани ҳама масъалаҳои
                   дарси кумак мекунанд»
                 </p>
-                <p
-                  className={`font-normal text-[14px] mb-3 leading-[20px] ${
-                    darkMode ? "text-trueGray100" : "text-trueGray800"
-                  }`}
-                >
-                  Барои мо хеле муҳим аст, ки ҳангоми омӯзиши курс корҳои амалӣ
-                  низ бисёр бошанд. Бинобар ин ҳама муаллимон лоиҳаҳои худро
-                  месозанд, ки ба шумо имкон медиҳад, ки на танҳо асосҳои
-                  назариявиро омӯзед, балки ҳолатҳои воқеиро дар амал бинед.
-                </p>
-                <p
-                  className={`font-semibold text-[14px] italic ${
-                    darkMode ? "text-white" : ""
-                  }`}
-                >
-                  «Донишҷӯёнамонро то дами кор ёфтанашон дастгирӣ мекунем.»
-                </p>
               </div>
             </div>
 
@@ -304,9 +283,9 @@ const About = () => {
                   : "linear-gradient(rgba(255, 255, 255, 0.2) 0%, rgb(255, 255, 255) 100%)",
               }}
             >
-              <div className="flex flex-col sm:flex-row justify-self-start sm:items-center gap-[28px]">
+              <div className="flex flex-col mb-[-20px] sm:flex-row justify-self-start sm:items-center gap-[28px]">
                 <img
-                  src="https://image.tmdb.org/t/p/h632/tk30wLMsyPxRoBp8Yk7pwqq0OtD.jpg"
+                  src="https://instagram.fdyu4-1.fna.fbcdn.net/v/t51.2885-19/456191142_2104824073246392_747208142838827106_n.jpg?_nc_ht=instagram.fdyu4-1.fna.fbcdn.net&_nc_cat=100&_nc_oc=Q6cZ2AHfBtbsgzJsv9_hsszuFWBcOyJJ7cQstOR-qXDZgFazwMNDPzpG_LEb6vO_kIf2fWI&_nc_ohc=wb3ASmmrnAgQ7kNvgHWklv-&_nc_gid=43cd434a40be446da3b4f397912b462e&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AYB1fW1sOfe6gLlTYXcKRYg-C7w_DZqaEF93XD8mO3hFtQ&oe=67AD3B30&_nc_sid=7a9f4b"
                   alt="Nurullah"
                   loading="lazy"
                   width="100px"
@@ -319,7 +298,7 @@ const About = () => {
                       darkMode ? "text-[#0EA5E9]" : "text-teritary"
                     } mb-[6px]`}
                   >
-                   Islam Makhachev
+                    Шаҳбози Абдулло | ДОКТОР
                   </h3>
                   <div className="w-[35%] border-b-[3px] border-[#94A3B8]"></div>
                   <p
@@ -333,33 +312,24 @@ const About = () => {
               </div>
               <div>
                 <p
-                  className={`font-normal text-[14px] leading-[20px] ${
-                    darkMode ? "text-trueGray100" : "text-trueGray800"
-                  }`}
-                >
-                  Дар манзараи бошукӯҳи Тоҷикистон, ки анъана бо сарҳадҳои фардо
-                  мувофиқат мекунад, академияи мо барои шахсони кунҷков ва
-                  навоварон ҳамчун чароғак аст.
-                </p>
-                <p
                   className={`font-semibold text-[14px] italic my-3 ${
                     darkMode ? "text-white" : ""
                   }`}
                 >
-                  «Мо худро ба ҳар як донишҷӯ хоҳишманд ва ба ҳар орзуе, ки
-                  то ҳол амалӣ нагардидааст, мебахшем»
+                  «Мо худро ба ҳар як донишҷӯ хоҳишманд ва ба ҳар орзуе, ки то
+                  ҳол амалӣ нагардидааст, мебахшем»
                 </p>
-                <p
+                {/* <p
                   className={`font-normal text-[14px] mb-3 leading-[20px] ${
                     darkMode ? "text-trueGray100" : "text-trueGray800"
                   }`}
                 >
-                  Мо ба қудрати илм боварӣ дорем ва кӯшиш мекунем, ки
-                  байни орзуҳо ва воқеият масофаи дур набошад. Ҷаҳонбинии мо аз
+                  Мо ба қудрати илм боварӣ дорем ва кӯшиш мекунем, ки байни
+                  орзуҳо ва воқеият масофаи дур набошад. Ҷаҳонбинии мо аз
                   чорчӯба берун аст: мо ҳаваси амалкуниро бедор мекунем,
                   мушкилиҳои воқеиро ҳал карда, дарҳоро ба имкониятҳои беохир
                   мекушоем.
-                </p>
+                </p> */}
                 <p
                   className={`font-semibold text-[14px] italic ${
                     darkMode ? "text-white" : ""

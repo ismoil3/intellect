@@ -44,123 +44,111 @@ const Header = () => {
         <Container>
           <div className="flex items-center justify-between py-4">
             <div>
-             <Link href={"/"}>
-             <Box sx={{ display: "flex", alignItems: "center", gap: "15px" }}>
-                <Image
-                  src={logo}
-                  className="rounded-full"
-                  alt="educrat"
-                  width={50}
-                  height={50}
-                />
-                <Box sx={{ display: { xs: "none", sm: "block" } }}>
-                  <p
-                    className={`logo text-2xl font-bold ${
-                      isDarkMode ? "text-white" : "text-black"
-                    }`}
-                  >
-                    Intellect
-                  </p>
+              <Link href={"/"}>
+                <Box
+                  sx={{ display: "flex", alignItems: "center", gap: "15px" }}
+                >
+                  <Image
+                    src={logo}
+                    className="rounded-full"
+                    alt="educrat"
+                    width={50}
+                    height={50}
+                  />
+                  <Box sx={{ display: { xs: "none", sm: "block" } }}>
+                    <p
+                      className={`logo text-2xl font-bold ${
+                        isDarkMode ? "text-white" : "text-black"
+                      }`}
+                    >
+                      Intellect
+                    </p>
+                  </Box>
                 </Box>
-              </Box>
               </Link>
             </div>
 
             {/* Desktop Navigation */}
-            <Box sx={{ display: { xs: "none", md: "block" }, color: "white" }}>
-              <ul
-                className={`${
-                  isDarkMode ? "text-white" : "text-black"
-                } flex gap-6 font-medium`}
-              >
-                <Link href={"/#courses"}>
-                  <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
-                    Курсы
-                  </li>
-                </Link>
-                <Link href={"/#news"}>
-                  <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
-                    Новости
-                  </li>
-                </Link>
-                <Link href={"/pages/about"}>
-                  <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
-                    О нас
-                  </li>
-                </Link>
-                <Link href={"/pages/contact"}>
-                  <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
-                    Контакты
-                  </li>
-                </Link>
-              </ul>
-            </Box>
-
-            {/* Desktop Actions */}
-            <Box
-              sx={{
-                color: "white",
-                gap: "15px",
-                alignItems: "center",
-                display: "flex",
-                justifyContent: "space-around",
-              }}
-            >
-              <ThemeSwitcher />
-
-              <FormControl
-                sx={{ m: 1, minWidth: 50, display: { xs: "none", md: "flex" } }}
-                size="small"
-              >
-                <Select
-                  labelId="demo-select-small-label"
-                  id="demo-select-small"
-                  value={age}
-                  onChange={handleChange}
-                  sx={{
-                    color: isDarkMode ? "white" : "black",
-                    "& .MuiSelect-icon": {
-                      color: "transparent",
-                    },
-                    "& .MuiSelect-outlined": {
-                      outlineStyle: "none",
-                    },
-                    outline: "none",
-                    "& .MuiOutlinedInput-notchedOutline": {
-                      border: "none", // Remove the notched outline for outlined Select
-                    },
-                    "&:hover": {
-                      border: "none", // Remove the border on hover
-                    },
-                    "&:focus": {
-                      outline: "none", // Remove outline when focused
-                    },
-                  }}
+            <Box sx={{ display: "flex", gap: "20px", color: "white" }}>
+              <Box sx={{ display: { xs: "none", md: "block" } }}>
+                <ul
+                  className={`${
+                    isDarkMode ? "text-white" : "text-black"
+                  } flex gap-6 font-medium`}
                 >
-                  <MenuItem value={"en"}>ENG</MenuItem>
-                  <MenuItem value={"ru"}>RUS</MenuItem>
-                  <MenuItem value={"tj"}>TAJ</MenuItem>
-                </Select>
-              </FormControl>
-              <Button
+                  <Link href={"/#courses"}>
+                    <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
+                      Курсы
+                    </li>
+                  </Link>
+                  <Link href={"/#news"}>
+                    <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
+                      Новости
+                    </li>
+                  </Link>
+                  <Link href={"/pages/about"}>
+                    <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
+                      О нас
+                    </li>
+                  </Link>
+                  <Link href={"/pages/contact"}>
+                    <li className="hover:text-[#00ff84] hover:cursor-pointer hover:bg-[#ffffff26] p-3 rounded-lg transition-all duration-300">
+                      Контакты
+                    </li>
+                  </Link>
+                </ul>
+              </Box>{" "}
+              {/* Desktop Actions */}
+              <Box
                 sx={{
-                  p: "5px 30px",
-                  backgroundColor: isDarkMode ? "" : "#FFFFFF",
-                  color: isDarkMode ? "#0B95CE" : "#0B95CE",
-                  border: `2px solid ${isDarkMode ? "#0B95CE" : "#0B95CE"}`,
-                  borderRadius: "8px",
-                  fontWeight: "bold",
-                  transition: "all 0.3s ease",
-                  ":hover": {
-                    backgroundColor: "#0B95CE",
-                    color: "#FFFFFF",
-                    borderColor: "#0B95CE",
-                    transform: "scale(1.05)",
-                  },
+                  color: "white",
+                  gap: "15px",
+                  alignItems: "center",
+                  display: "flex",
+                  justifyContent: "space-around",
                 }}
               >
-                Log in
-              </Button>
+
+                <FormControl
+                  sx={{
+                    m: 1,
+                    minWidth: 50,
+                    display: { xs: "none", md: "flex" },
+                  }}
+                  size="small"
+                >
+                  <Select
+                    labelId="demo-select-small-label"
+                    id="demo-select-small"
+                    value={age}
+                    onChange={handleChange}
+                    sx={{
+                      color: isDarkMode ? "white" : "black",
+                      "& .MuiSelect-icon": {
+                        color: "transparent",
+                      },
+                      "& .MuiSelect-outlined": {
+                        outlineStyle: "none",
+                      },
+                      outline: "none",
+                      "& .MuiOutlinedInput-notchedOutline": {
+                        border: "none", // Remove the notched outline for outlined Select
+                      },
+                      "&:hover": {
+                        border: "none", // Remove the border on hover
+                      },
+                      "&:focus": {
+                        outline: "none", // Remove outline when focused
+                      },
+                    }}
+                  >
+                    <MenuItem value={"en"}>ENG</MenuItem>
+                    <MenuItem value={"ru"}>RUS</MenuItem>
+                    <MenuItem value={"tj"}>TAJ</MenuItem>
+                  </Select>
+                </FormControl>
+                <ThemeSwitcher />
+              </Box>
             </Box>
           </div>
         </Container>
