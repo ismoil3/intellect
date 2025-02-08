@@ -95,9 +95,7 @@ const TeacherCard = ({ teacher, darkMode }) => {
     <div
       className={`relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 h-[350px] max-w-[300px] mx-auto ${
         darkMode ? "bg-gray-800" : "bg-white"
-      } ${
-        teacher.untrusted ? "border-2 border-red-500" : "border-2 border-transparent"
-      }`}
+      } `}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
@@ -110,11 +108,7 @@ const TeacherCard = ({ teacher, darkMode }) => {
           src={teacher.image || "/placeholder.svg"}
           alt={teacher.name}
         />
-        {teacher.untrusted && (
-          <div className="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-            ❌ Ноустувор
-          </div>
-        )}
+       
       </div>
 
       {/* Teacher Details */}
@@ -139,13 +133,7 @@ const TeacherCard = ({ teacher, darkMode }) => {
       </div>
 
       {/* Hover Overlay for Untrusted Teachers */}
-      {teacher.untrusted && !hover && (
-        <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
-          <span className="text-white text-lg font-bold text-center px-4">
-            ❌ Омӯзгор ноустувор аст
-          </span>
-        </div>
-      )}
+      
     </div>
   );
 };
