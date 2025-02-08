@@ -132,13 +132,13 @@ const Header = () => {
                       },
                       outline: "none",
                       "& .MuiOutlinedInput-notchedOutline": {
-                        border: "none", // Remove the notched outline for outlined Select
+                        border: "none",
                       },
                       "&:hover": {
-                        border: "none", // Remove the border on hover
+                        border: "none",
                       },
                       "&:focus": {
-                        outline: "none", // Remove outline when focused
+                        outline: "none",
                       },
                     }}
                   >
